@@ -44,7 +44,19 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
         do {
             let csv = try CSV(contentsOfURL: path)
             let rows = csv.rows
+            
+            // printing
             print (rows)
+            
+            for row in rows {
+                let oilNameOil = row["name"]!
+                let botanicalNameOil = row["botanicalName"]!
+                
+                let oil = Oils(name: oilNameOil, botanicalName: botanicalNameOil)
+                oils.append(oil)
+            }
+            
+            
         } catch let err as NSError {
             print(err.debugDescription)
             
@@ -66,12 +78,21 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return oils.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? OilCell {
+        
+            let oil: Oils!
+            
+            oil = oils[indexPath.row]
+            cell.configureCell(oil)
+            return cell
+            
+        } else {
+            return UITableViewCell()
+        }
     }
     
 }
