@@ -8,16 +8,29 @@
 
 import UIKit
 
-class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var oils = [Oils]()
+    var filteredOils = [Oils]()
+    var inSearchMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // table view
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // search bar
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.search
+        
+        parseOilCSV()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +38,18 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    func parseOilCSV() {
+        let path = Bundle.main.path(forResource: "oils", ofType: "csv")!
+        
+        do {
+            let csv = try CSV(contentsOfURL: path)
+            let rows = csv.rows
+            print (rows)
+        } catch let err as NSError {
+            print(err.debugDescription)
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -125,7 +125,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="esstentialbtn"/>
                                 <connections>
-                                    <segue destination="fOF-rE-cdb" kind="show" id="kK3-M3-Hf4"/>
+                                    <segue destination="fOF-rE-cdb" kind="presentation" id="kK3-M3-Hf4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMo-IU-fS8">
@@ -214,7 +214,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="251" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bLp-dN-lw7">
                                 <rect key="frame" x="16" y="160" width="288" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="9vn-cn-KjT">
+                                <searchBar key="tableHeaderView" userInteractionEnabled="NO" contentMode="redraw" id="9vn-cn-KjT">
                                     <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -223,7 +223,7 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="251" id="ZTI-Ae-XVq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="oilCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="251" id="ZTI-Ae-XVq" customClass="OilCell" customModule="Loyly" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="288" height="251"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZTI-Ae-XVq" id="fiP-Ot-AUf">
@@ -251,6 +251,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bannerOil" destination="OQY-4g-4tq" id="lvi-8w-Ncy"/>
+                                            <outlet property="botanicalNameOil" destination="KBb-le-cdy" id="RWR-iM-bQ9"/>
+                                            <outlet property="nameOil" destination="YFQ-2Y-q3M" id="LQa-aD-5Yx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -277,8 +282,11 @@
                             <constraint firstItem="xwB-0B-YaM" firstAttribute="top" secondItem="KGQ-SA-3Fb" secondAttribute="top" id="fpK-1c-VyR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ESSENTIAL OILS" id="X45-BW-WuM"/>
+                    <navigationItem key="navigationItem" title="ESSENTIAL OILS" id="8YY-hj-M5a">
+                        <barButtonItem key="backBarButtonItem" title="MENU" id="9nI-kN-ByJ"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="9vn-cn-KjT" id="wPB-U1-ycd"/>
                         <outlet property="searchDisplayController" destination="Wqf-ox-3jY" id="mdt-iY-Jwv"/>
                         <outlet property="tableView" destination="bLp-dN-lw7" id="I9X-Tt-dGC"/>
                     </connections>

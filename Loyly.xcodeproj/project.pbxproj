@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C01F12005500B7B8E2 /* Oils.swift */; };
+		3661B6C41F120B6600B7B8E2 /* OilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C31F120B6600B7B8E2 /* OilCell.swift */; };
+		366F7A071F12115C00117B32 /* oils.csv in Resources */ = {isa = PBXBuildFile; fileRef = 366F7A061F12115C00117B32 /* oils.csv */; };
+		366F7A0A1F12123900117B32 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F7A091F12123900117B32 /* csv.swift */; };
 		36B12CF91F0E385B00B2FEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B12CF81F0E385B00B2FEB4 /* AppDelegate.swift */; };
 		36B12CFB1F0E385B00B2FEB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B12CFA1F0E385B00B2FEB4 /* ViewController.swift */; };
 		36B12CFE1F0E385B00B2FEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B12CFC1F0E385B00B2FEB4 /* Main.storyboard */; };
 		36B12D001F0E385B00B2FEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B12CFF1F0E385B00B2FEB4 /* Assets.xcassets */; };
 		36B12D031F0E385B00B2FEB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B12D011F0E385B00B2FEB4 /* LaunchScreen.storyboard */; };
 		36B12D0B1F0E51E700B2FEB4 /* EssentialOilsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B12D0A1F0E51E700B2FEB4 /* EssentialOilsVC.swift */; };
+		36EE5C631F0F7D67002809BA /* Oils.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5C611F0F7D67002809BA /* Oils.xcdatamodeld */; };
+		36EE5C651F0F9297002809BA /* oils.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36EE5C641F0F9297002809BA /* oils.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3661B6C01F12005500B7B8E2 /* Oils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oils.swift; sourceTree = "<group>"; };
+		3661B6C31F120B6600B7B8E2 /* OilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCell.swift; sourceTree = "<group>"; };
+		366F7A061F12115C00117B32 /* oils.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oils.csv; sourceTree = "<group>"; };
+		366F7A091F12123900117B32 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
 		36B12CF51F0E385B00B2FEB4 /* Loyly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loyly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B12CF81F0E385B00B2FEB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36B12CFA1F0E385B00B2FEB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +34,8 @@
 		36B12D021F0E385B00B2FEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B12D041F0E385B00B2FEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B12D0A1F0E51E700B2FEB4 /* EssentialOilsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialOilsVC.swift; sourceTree = "<group>"; };
+		36EE5C621F0F7D67002809BA /* Oils.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Oils.xcdatamodel; sourceTree = "<group>"; };
+		36EE5C641F0F9297002809BA /* oils.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = oils.strings; path = ../oils.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3661B6BE1F12002D00B7B8E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				36B12CFA1F0E385B00B2FEB4 /* ViewController.swift */,
+				36B12D0A1F0E51E700B2FEB4 /* EssentialOilsVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3661B6BF1F12003D00B7B8E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3661B6C01F12005500B7B8E2 /* Oils.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3661B6C21F120B4200B7B8E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3661B6C31F120B6600B7B8E2 /* OilCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		366F7A051F120F5300117B32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				366F7A061F12115C00117B32 /* oils.csv */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		366F7A081F12122300117B32 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				366F7A091F12123900117B32 /* csv.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		36B12CEC1F0E385B00B2FEB4 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +109,18 @@
 		36B12CF71F0E385B00B2FEB4 /* Loyly */ = {
 			isa = PBXGroup;
 			children = (
+				3661B6BF1F12003D00B7B8E2 /* Model */,
+				3661B6C21F120B4200B7B8E2 /* View */,
+				3661B6BE1F12002D00B7B8E2 /* Controller */,
+				366F7A051F120F5300117B32 /* Resources */,
+				366F7A081F12122300117B32 /* Util */,
 				36B12CF81F0E385B00B2FEB4 /* AppDelegate.swift */,
-				36B12CFA1F0E385B00B2FEB4 /* ViewController.swift */,
 				36B12CFC1F0E385B00B2FEB4 /* Main.storyboard */,
 				36B12CFF1F0E385B00B2FEB4 /* Assets.xcassets */,
 				36B12D011F0E385B00B2FEB4 /* LaunchScreen.storyboard */,
 				36B12D041F0E385B00B2FEB4 /* Info.plist */,
-				36B12D0A1F0E51E700B2FEB4 /* EssentialOilsVC.swift */,
+				36EE5C611F0F7D67002809BA /* Oils.xcdatamodeld */,
+				36EE5C641F0F9297002809BA /* oils.strings */,
 			);
 			path = Loyly;
 			sourceTree = "<group>";
@@ -129,7 +187,9 @@
 			files = (
 				36B12D031F0E385B00B2FEB4 /* LaunchScreen.storyboard in Resources */,
 				36B12D001F0E385B00B2FEB4 /* Assets.xcassets in Resources */,
+				366F7A071F12115C00117B32 /* oils.csv in Resources */,
 				36B12CFE1F0E385B00B2FEB4 /* Main.storyboard in Resources */,
+				36EE5C651F0F9297002809BA /* oils.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +200,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EE5C631F0F7D67002809BA /* Oils.xcdatamodeld in Sources */,
+				366F7A0A1F12123900117B32 /* csv.swift in Sources */,
 				36B12CFB1F0E385B00B2FEB4 /* ViewController.swift in Sources */,
+				3661B6C41F120B6600B7B8E2 /* OilCell.swift in Sources */,
 				36B12D0B1F0E51E700B2FEB4 /* EssentialOilsVC.swift in Sources */,
+				3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */,
 				36B12CF91F0E385B00B2FEB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,8 +372,22 @@
 				36B12D091F0E385B00B2FEB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		36EE5C611F0F7D67002809BA /* Oils.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				36EE5C621F0F7D67002809BA /* Oils.xcdatamodel */,
+			);
+			currentVersion = 36EE5C621F0F7D67002809BA /* Oils.xcdatamodel */;
+			path = Oils.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 36B12CED1F0E385B00B2FEB4 /* Project object */;
 }
