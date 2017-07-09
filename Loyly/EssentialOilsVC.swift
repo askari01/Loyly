@@ -51,8 +51,12 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
             for row in rows {
                 let oilNameOil = row["name"]!
                 let botanicalNameOil = row["botanicalName"]!
+                let plantFamilyOil = row["plantFamily"]!
+                let originOil = row["origin"]!
+                let noteOil = row["note"]!
+                let effectOil = row["effect"]!
                 
-                let oil = Oils(name: oilNameOil, botanicalName: botanicalNameOil)
+                let oil = Oils(name: oilNameOil, botanicalName: botanicalNameOil, plantFamily: plantFamilyOil, origin: originOil, note: noteOil, effect: effectOil)
                 oils.append(oil)
             }
             

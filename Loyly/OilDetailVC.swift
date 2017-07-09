@@ -27,7 +27,9 @@ class OilDetailVC: UIViewController {
         // Do any additional setup after loading the view.
         nameOil.text = oil.name.capitalized
         bannerOil.image = UIImage(named: oil.name)
-//        familyOil.text = oil.plantFamily
+        familyOil.text = oil.plantFamily
+        originOil.text = oil.origin
+        noteOil.text = oil.note
     }
 
     override func didReceiveMemoryWarning() {

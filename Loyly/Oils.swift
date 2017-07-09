@@ -43,9 +43,13 @@ class Oils {
         return _effect
     }
     
-    init(name: String, botanicalName: String) {
+    init(name: String, botanicalName: String, plantFamily: String, origin: String, note: String, effect: String) {
         _name = name
         _botanicalName = botanicalName
+        _plantFamily = plantFamily
+        _origin = origin
+        _note = note
+        _effect = effect
     }
     
 }
