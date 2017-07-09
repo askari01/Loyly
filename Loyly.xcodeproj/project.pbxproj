@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36332A3E1F122F7700416442 /* OilDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36332A3D1F122F7700416442 /* OilDetailVC.swift */; };
 		3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C01F12005500B7B8E2 /* Oils.swift */; };
 		3661B6C41F120B6600B7B8E2 /* OilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C31F120B6600B7B8E2 /* OilCell.swift */; };
 		366F7A071F12115C00117B32 /* oils.csv in Resources */ = {isa = PBXBuildFile; fileRef = 366F7A061F12115C00117B32 /* oils.csv */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36332A3D1F122F7700416442 /* OilDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilDetailVC.swift; sourceTree = "<group>"; };
 		3661B6C01F12005500B7B8E2 /* Oils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oils.swift; sourceTree = "<group>"; };
 		3661B6C31F120B6600B7B8E2 /* OilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCell.swift; sourceTree = "<group>"; };
 		366F7A061F12115C00117B32 /* oils.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oils.csv; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				36B12CFA1F0E385B00B2FEB4 /* ViewController.swift */,
 				36B12D0A1F0E51E700B2FEB4 /* EssentialOilsVC.swift */,
+				36332A3D1F122F7700416442 /* OilDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				366F7A0A1F12123900117B32 /* csv.swift in Sources */,
 				36B12CFB1F0E385B00B2FEB4 /* ViewController.swift in Sources */,
 				3661B6C41F120B6600B7B8E2 /* OilCell.swift in Sources */,
+				36332A3E1F122F7700416442 /* OilDetailVC.swift in Sources */,
 				36B12D0B1F0E51E700B2FEB4 /* EssentialOilsVC.swift in Sources */,
 				3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */,
 				36B12CF91F0E385B00B2FEB4 /* AppDelegate.swift in Sources */,

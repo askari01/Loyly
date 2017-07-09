@@ -78,6 +78,10 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if inSearchMode {
+            return filteredOils.count
+        }
+        
         return oils.count
     }
     
@@ -85,13 +89,58 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? OilCell {
         
             let oil: Oils!
+            if inSearchMode {
+                oil = filteredOils[indexPath.row]
+                cell.configureCell(oil)
+            } else {
+                oil = oils[indexPath.row]
+                cell.configureCell(oil)
+            }
             
-            oil = oils[indexPath.row]
-            cell.configureCell(oil)
             return cell
             
         } else {
             return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var oil: Oils!
+        
+        if inSearchMode {
+            oil = filteredOils[indexPath.row]
+        } else {
+            oil = oils[indexPath.row]
+        }
+        
+//        to be done
+        performSegue(withIdentifier: "oilDetails", sender: oil)
+    }
+    
+    func searchButtonPressed() {
+        view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            inSearchMode = false
+            tableView.reloadData()
+            view.endEditing(true)
+        } else {
+            inSearchMode = true
+            let lower = searchBar.text!.lowercased()
+            
+            filteredOils = oils.filter({$0.name.range(of: lower) != nil})
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "oilDetails" {
+            if let detailsVC = segue.destination as? OilDetailVC {
+                if let oil = sender as? Oils {
+                    detailsVC.oil = oil
+                }
+            }
         }
     }
     
