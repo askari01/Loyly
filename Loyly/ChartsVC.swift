@@ -18,11 +18,17 @@ class ChartsVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        image1.tag = 1
+        image2.tag = 2
+        image3.tag = 3
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(click))
+        tap.numberOfTapsRequired = 1
         image1.addGestureRecognizer(tap)
         image2.addGestureRecognizer(tap)
         image3.addGestureRecognizer(tap)
-        tap.numberOfTapsRequired = 1
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +36,8 @@ class ChartsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func click() {
+    func click(gesture: UIGestureRecognizer) {
+        print("GESTURE TAG: ",gesture.view?.tag)
         performSegue(withIdentifier: "chart", sender: self)
     }
 
