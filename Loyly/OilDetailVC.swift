@@ -30,6 +30,8 @@ class OilDetailVC: UIViewController {
         familyOil.text = oil.plantFamily
         originOil.text = oil.origin
         noteOil.text = oil.note
+        strengthOil.text = oil.strength
+        fragranceGroup.text = oil.fragrance
     }
 
     override func didReceiveMemoryWarning() {

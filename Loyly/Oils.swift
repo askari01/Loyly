@@ -16,6 +16,8 @@ class Oils {
     private var _origin: String!
     private var _note: String!
     private var _effect: String!
+    private var _strength: String!
+    private var _fragrance: String!
     
     
     //data protection for crashes
@@ -43,13 +45,23 @@ class Oils {
         return _effect
     }
     
-    init(name: String, botanicalName: String, plantFamily: String, origin: String, note: String, effect: String) {
+    var strength: String {
+        return _strength
+    }
+    
+    var fragrance: String {
+        return _fragrance
+    }
+    
+    init(name: String, botanicalName: String, plantFamily: String, origin: String, note: String, effect: String, strength: String, fragrance: String) {
         _name = name
         _botanicalName = botanicalName
         _plantFamily = plantFamily
         _origin = origin
         _note = note
         _effect = effect
+        _strength = strength
+        _fragrance = fragrance
     }
     
 }
