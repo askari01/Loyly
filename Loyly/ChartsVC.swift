@@ -13,6 +13,7 @@ class ChartsVC: UIViewController {
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var image2: UIImageView!
     @IBOutlet weak var image3: UIImageView!
+    var choice: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,15 @@ class ChartsVC: UIViewController {
         image2.tag = 2
         image3.tag = 3
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(click))
-        tap.numberOfTapsRequired = 1
-        image1.addGestureRecognizer(tap)
-        image2.addGestureRecognizer(tap)
-        image3.addGestureRecognizer(tap)
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(click))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(click))
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(click))
+        tap1.numberOfTapsRequired = 1
+        tap2.numberOfTapsRequired = 1
+        tap3.numberOfTapsRequired = 1
+        image1.addGestureRecognizer(tap1)
+        image2.addGestureRecognizer(tap2)
+        image3.addGestureRecognizer(tap3)
         
     }
 
@@ -38,9 +43,18 @@ class ChartsVC: UIViewController {
     
     func click(gesture: UIGestureRecognizer) {
         print("GESTURE TAG: ",gesture.view?.tag)
+        choice = Int((gesture.view?.tag)!)
         performSegue(withIdentifier: "chart", sender: self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chart" {
+            if let chartDetails = segue.destination as? ChartVC {
+                chartDetails.choice = String(describing: choice!)
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360FDAB91F161CCE00E7FF9B /* caution_a3-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 360FDAB81F161CCE00E7FF9B /* caution_a3-min.pdf */; };
 		36332A3E1F122F7700416442 /* OilDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36332A3D1F122F7700416442 /* OilDetailVC.swift */; };
 		3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C01F12005500B7B8E2 /* Oils.swift */; };
 		3661B6C41F120B6600B7B8E2 /* OilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C31F120B6600B7B8E2 /* OilCell.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		360FDAB81F161CCE00E7FF9B /* caution_a3-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "caution_a3-min.pdf"; sourceTree = "<group>"; };
 		36332A3D1F122F7700416442 /* OilDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilDetailVC.swift; sourceTree = "<group>"; };
 		3661B6C01F12005500B7B8E2 /* Oils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oils.swift; sourceTree = "<group>"; };
 		3661B6C31F120B6600B7B8E2 /* OilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCell.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				36C209A01F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf */,
 				36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */,
+				360FDAB81F161CCE00E7FF9B /* caution_a3-min.pdf */,
 				366F7A061F12115C00117B32 /* oils.csv */,
 			);
 			name = Resources;
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B12D031F0E385B00B2FEB4 /* LaunchScreen.storyboard in Resources */,
+				360FDAB91F161CCE00E7FF9B /* caution_a3-min.pdf in Resources */,
 				36B12D001F0E385B00B2FEB4 /* Assets.xcassets in Resources */,
 				366F7A071F12115C00117B32 /* oils.csv in Resources */,
 				36B12CFE1F0E385B00B2FEB4 /* Main.storyboard in Resources */,

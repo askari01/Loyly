@@ -10,6 +10,8 @@ import UIKit
 
 class ChartVC: UIViewController, UIWebViewDelegate {
 
+    var choice: String?
+    
     @IBOutlet weak var webView: UIWebView!
     
     override func viewDidLoad() {
@@ -17,6 +19,30 @@ class ChartVC: UIViewController, UIWebViewDelegate {
 
         // Do any additional setup after loading the view.
         webView.delegate = self
+        var res: String?
+        var ext: String?
+        print (choice!)
+        switch choice! {
+        case "1":
+            res = "eo_instruction_a3_en-min"
+            ext = "pdf"
+        case "2":
+            res = "harmonized_blending_a3_en-min"
+            ext = "pdf"
+        case "3":
+            res = "caution_a3-min"
+            ext = "pdf"
+        default:
+            res = ""
+            return
+        }
+        
+        print (choice! + ext!)
+        
+        if let url = Bundle.main.url(forResource: res!, withExtension: ext!) {
+            let request = URLRequest(url: url)
+            webView.loadRequest(request)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,12 +50,13 @@ class ChartVC: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if let url = Bundle.main.url(forResource: "eo_instruction_a3_en-min", withExtension: "pdf") {
-            let request = URLRequest(url: url)
-            webView.loadRequest(request)
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        print(choice)
+//        if let url = Bundle.main.url(forResource: "eo_instruction_a3_en-min", withExtension: "pdf") {
+//            let request = URLRequest(url: url)
+//            webView.loadRequest(request)
+//        }
+//    }
     
 
     /*
