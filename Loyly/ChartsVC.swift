@@ -42,7 +42,7 @@ class ChartsVC: UIViewController {
     }
     
     func click(gesture: UIGestureRecognizer) {
-        print("GESTURE TAG: ",gesture.view?.tag)
+//        print("GESTURE TAG: ",gesture.view?.tag)
         choice = Int((gesture.view?.tag)!)
         performSegue(withIdentifier: "chart", sender: self)
     }
