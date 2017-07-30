@@ -8,9 +8,21 @@
 
 import UIKit
 
+// Delegate protocol declared here
+protocol GameBoardUIViewDelegate: class {
+    func checkIfNextMoveExistsForGameBoardUIView(gameBoardUIView: CellV, text: String)
+}
+
 class CellV: UIView {
     @IBOutlet var view: UIView!
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var text: UITextField!
     
+    // GameBoardUIView has a delegate property that conforms to the protocol
+    // weak to prevent retain cycles
+    weak var delegate:GameBoardUIViewDelegate?
+   
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -22,22 +34,26 @@ class CellV: UIView {
         view.frame = self.bounds
     }
     
-    private func comonInit() {
-        Bundle.main.loadNibNamed("CellV", owner: self, options: nil)
-        guard let content = view else { return }
-        content.frame = self.bounds
-        content.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        self.addSubview(content)
-    }
-    
     func loadViewFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "CellV", bundle: bundle)
         let view1 = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view1
-//        return UINib(nibName: "CellV", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
-        
+    }
+    
+    func getText() -> String {
+        if text.text != nil {
+            return text.text!
+        }
+        return "hi"
+    }
+    
+    @IBAction func ButtonClicked(_ sender: UIButton) {
+        print("button clicked")
+        var abc = getText()
+        delegate?.checkIfNextMoveExistsForGameBoardUIView(gameBoardUIView: self, text: abc)
+        print (abc)
     }
     
 }

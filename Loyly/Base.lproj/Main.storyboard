@@ -340,7 +340,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bME-Th-tIz">
                                                         <rect key="frame" x="0.0" y="40" width="312" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7AX-z8-Cp3">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7AX-z8-Cp3">
                                                                 <rect key="frame" x="8" y="0.0" width="304" height="41"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="textColor"/>
@@ -370,17 +370,30 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juf-6c-Khp">
                                                         <rect key="frame" x="0.0" y="131" width="312" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ifM-5E-6ye">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ifM-5E-6ye">
                                                                 <rect key="frame" x="8" y="0.0" width="304" height="41"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jyt-am-AFQ">
+                                                                <rect key="frame" x="8" y="6" width="304" height="29"/>
+                                                                <segments>
+                                                                    <segment title="Classic"/>
+                                                                    <segment title="Modern"/>
+                                                                    <segment title="Steambath"/>
+                                                                    <segment title="Smoke"/>
+                                                                    <segment title="Show"/>
+                                                                </segments>
+                                                            </segmentedControl>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
+                                                            <constraint firstItem="jyt-am-AFQ" firstAttribute="leading" secondItem="juf-6c-Khp" secondAttribute="leading" constant="8" id="Oz2-3G-y1C"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jyt-am-AFQ" secondAttribute="trailing" id="Rbg-8h-jlT"/>
                                                             <constraint firstItem="ifM-5E-6ye" firstAttribute="leading" secondItem="juf-6c-Khp" secondAttribute="leadingMargin" id="ai9-je-TsB"/>
+                                                            <constraint firstItem="jyt-am-AFQ" firstAttribute="centerY" secondItem="ifM-5E-6ye" secondAttribute="centerY" id="fYC-NT-1Ak"/>
                                                             <constraint firstItem="ifM-5E-6ye" firstAttribute="top" secondItem="juf-6c-Khp" secondAttribute="top" id="n9S-WA-LAD"/>
                                                             <constraint firstAttribute="height" constant="41" id="qs5-wh-MBf"/>
                                                             <constraint firstAttribute="trailing" secondItem="ifM-5E-6ye" secondAttribute="trailing" id="rg6-Yl-H6F"/>
@@ -400,7 +413,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njj-ss-qaZ">
                                                         <rect key="frame" x="0.0" y="222" width="312" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7u-cR-OLI">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7u-cR-OLI">
                                                                 <rect key="frame" x="8" y="0.0" width="304" height="41"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="textColor"/>
@@ -430,7 +443,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1F-Ng-YJx">
                                                         <rect key="frame" x="0.0" y="313" width="312" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Ingredient 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vSy-o2-UcR">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Ingredient 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vSy-o2-UcR">
                                                                 <rect key="frame" x="31" y="0.0" width="243" height="41"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="textColor"/>
@@ -444,6 +457,9 @@
                                                                     <constraint firstAttribute="width" constant="38" id="1fj-DO-OtF"/>
                                                                 </constraints>
                                                                 <state key="normal" title="X"/>
+                                                                <connections>
+                                                                    <action selector="ingredientButton:" destination="WYJ-6X-gYE" eventType="touchUpInside" id="FY1-KV-SDC"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHA-2v-SPk">
                                                                 <rect key="frame" x="8" y="0.0" width="23" height="41"/>
@@ -472,7 +488,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnU-3I-2mY">
                                                         <rect key="frame" x="0.0" y="364" width="312" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Ingredient 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Wd-0x-2tF">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Ingredient 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Wd-0x-2tF">
                                                                 <rect key="frame" x="31" y="0.0" width="243" height="41"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="textColor"/>
@@ -765,12 +781,13 @@
                     <size key="freeformSize" width="340" height="1100"/>
                     <connections>
                         <outlet property="height1" destination="kAs-Gd-LQV" id="iKn-bT-64o"/>
+                        <outlet property="height2" destination="Oj2-Xv-28P" id="8Uw-yD-cg3"/>
                         <outlet property="stackView" destination="Ul6-Lv-vlX" id="Xqv-eE-yBr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCY-PP-d6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3774" y="1115"/>
+            <point key="canvasLocation" x="3772.5" y="1114.4366197183099"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="e6V-Ux-WTw">
