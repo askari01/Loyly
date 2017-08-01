@@ -23,23 +23,24 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     var ingredient: String?
     
     var abc = CellV()
-    var abc1 = [UIView?](repeating: CellV(), count: 64)
+    var ingredientCollection = [CellV?](repeating: CellV(), count: 64)
+    var abc2 = CellV()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print (stackView.arrangedSubviews.count)
-        var cell = abc.loadViewFromNib()
-        abc.delegate = self
+//        var cell = ingredientCollection[ingredientCount]?.loadViewFromNib()
+        ingredientCollection[ingredientCount]?.delegate = self
         
         //testing
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.numberOfTapsRequired = 1
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
+        tap.cancelsTouchesInView = false
+        ingredientField.delegate = self
         view.addGestureRecognizer(tap)
     }
     
@@ -81,35 +82,55 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
 
     @IBAction func ingredientButton(_ sender: UIButton) {
         ingredientCount += 1
-        print (ingredientCount)
-        
+        print ("The Count is: \(ingredientCount)")
+        ingredientCollection[ingredientCount] = CellV()
+        var abc4 = CellV()
+        print(abc4)
+        print (CellV())
+        print (ingredientCollection[ingredientCount])
         // saving array of views
-        abc1[ingredientCount] = abc.loadViewFromNib()
+//        if ingredientCount > 1 {
+//            print(ingredientCollection[ingredientCount-1]?.text.text)
+//        }
+//        ingredientCollection[ingredientCount] = abc
+//        abc2 = abc
         
-        // sving text
-        if ingredientField.text != nil && ingredientCount == 1 {
-            ingredient = String(describing:ingredientCount) + ingredientField.text!
-        }
+        // saving text
+//        if ingredientField.text != nil && ingredientCount == 1 {
+//            ingredient = String(describing:ingredientCount) + ingredientField.text!
+//        }
 //        abc.text.text = "boo: \(ingredientCount)"
 //        abc.text.tag = 7 + ingredientCount
-//        if let abc1 = abc.text.text {
-//            print ("non: \(abc1)")
-//            print ("ji: \(abc.text.tag)")
+//        if abc.text.text != nil {
+//            print ("text: \(abc.text.text)")
+//            print ("textTag: \(abc.text.tag)")
 //        }
 //        
+//        if ingredientCount > 1 {
+//            print(self.ingredientCollection[1]?.text.text)
+//            var abc3 = self.ingredientCollection[1]
+//            print(abc2.text.tag)
+//        }
+        
         // colour
-//       cell.backgroundColor = UIColor.orange
-        abc.view.backgroundColor = UIColor.orange
-        abc.view1.backgroundColor = UIColor.orange
-        abc.text.delegate = self
-        var cell = abc.loadViewFromNib()
+        ingredientCollection[ingredientCount]?.text.delegate = self
+        var cell = ingredientCollection[ingredientCount]?.loadViewFromNib()
+        ingredientCollection[ingredientCount]?.view.backgroundColor = UIColor.init(red: 252/255.0, green: 107/255.0, blue: 52/255.0, alpha: 1)
+        ingredientCollection[ingredientCount]?.view1.backgroundColor = UIColor.init(red: 252/255.0, green: 107/255.0, blue: 52/255.0, alpha: 1)
         if cell != nil {
-            stackView.insertArrangedSubview(cell, at: (7 + ingredientCount))
+            print("tag: \(cell?.tag)")
+            stackView.insertArrangedSubview(cell!, at: (7 + ingredientCount))
             // removing
 //            stackView.removeArrangedSubview(cell)
             height1.constant = height1.constant + CGFloat(41)
             height2.constant = height2.constant + CGFloat(41)
+        }
+    }
     
+    
+    @IBAction func instructionButton(_ sender: UIButton) {
+        for allData in ingredientCollection {
+            print("Baby: \(allData?.text.text)")
         }
     }
     
@@ -120,8 +141,10 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     // testing
     // UITextField Delegates
     func textFieldDidBeginEditing(_ textField: UITextField) {
+//         animateViewMoving(up: true, moveValue: 280)
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
+//        animateViewMoving(up: false, moveValue: 280)
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true;
@@ -138,6 +161,19 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         return true;
+    }
+    
+    // Jayprakash Dubey code from stack overflow
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        
+        UIView.beginAnimations("animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration)
+        
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
     }
 
 }
