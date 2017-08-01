@@ -15,24 +15,71 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     
     @IBOutlet var gameBoardUIView: CellV!
     
+    // Title
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleField: UITextField!
+    
+    // Tags
+    @IBOutlet weak var tags: UISegmentedControl!
+    
+    //Time
+    @IBOutlet weak var timeField: UITextField!
+    @IBOutlet weak var timeView: UIView!
+    
+    // Ingredient
     @IBOutlet weak var ingredientField: UITextField!
+    @IBOutlet weak var ingredientProgress: UIProgressView!
+    @IBOutlet weak var ingredientView: UIView!
+    @IBOutlet weak var ingredientButton: UIButton!
     
+    // Instructions
+    @IBOutlet weak var instructionField: UITextField!
+    @IBOutlet weak var instructionProgress: UIProgressView!
+    @IBOutlet weak var instructionView: UIView!
+    @IBOutlet weak var instructionButton: UIButton!
+
     
+    // Steps
+    @IBOutlet weak var stepField: UITextField!
+    @IBOutlet weak var stepProgress: UIProgressView!
+    @IBOutlet weak var stepView: UIView!
+    @IBOutlet weak var stepButton: UIButton!
+    
+    // Image
+    @IBOutlet weak var image: UIImageView!
+    
+    // Add Image
+    @IBOutlet weak var saveAll: UIButton!
+    
+    // Ingredient Handler
     var ingredientCount: Int = 0
-//    let GetData: GetDataDelegate as? Cell
     var ingredient: String?
     
-    var abc = CellV()
     var ingredientCollection = [CellV?](repeating: CellV(), count: 64)
-    var abc2 = CellV()
+    var ingredientCollections = [CellV]()
+    
+    // Instruction Handler
+    var instructionCount: Int = 0
+    var instruction: String?
+    
+    var instructionCollection = [CellV?](repeating: CellV(), count: 64)
+    var instructionCollections = [CellV]()
+    
+    // Step Handler
+    var stepCount: Int = 0
+    var step: String?
+    
+    var stepCollection = [CellV?](repeating: CellV(), count: 64)
+    var stepCollections = [CellV]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print (stackView.arrangedSubviews.count)
-//        var cell = ingredientCollection[ingredientCount]?.loadViewFromNib()
         ingredientCollection[ingredientCount]?.delegate = self
+        instructionCollection[instructionCount]?.delegate = self
+        stepCollection[stepCount]?.delegate = self
         
         //testing
         //Looks for single or multiple taps.
@@ -42,6 +89,9 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
         tap.cancelsTouchesInView = false
         ingredientField.delegate = self
         view.addGestureRecognizer(tap)
+        
+        // buttons set
+        ingredientButton.imageView?.contentMode = .scaleAspectFit
     }
     
     override func awakeFromNib() {
@@ -64,7 +114,6 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
             self.ingredient?.append(String(describing:(self.ingredientCount + 1)))
             self.ingredient?.append(text)
             print(self.ingredient)
-//            print(self.abc1[0].text.text)
         }))
         
         // If you need to feed back to the game view you can do it in the completion block here
@@ -81,70 +130,174 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     }
 
     @IBAction func ingredientButton(_ sender: UIButton) {
-        ingredientCount += 1
-        print ("The Count is: \(ingredientCount)")
-        ingredientCollection[ingredientCount] = CellV()
-        var abc4 = CellV()
-        print(abc4)
-        print (CellV())
-        print (ingredientCollection[ingredientCount])
-        // saving array of views
-//        if ingredientCount > 1 {
-//            print(ingredientCollection[ingredientCount-1]?.text.text)
-//        }
-//        ingredientCollection[ingredientCount] = abc
-//        abc2 = abc
-        
-        // saving text
-//        if ingredientField.text != nil && ingredientCount == 1 {
-//            ingredient = String(describing:ingredientCount) + ingredientField.text!
-//        }
-//        abc.text.text = "boo: \(ingredientCount)"
-//        abc.text.tag = 7 + ingredientCount
-//        if abc.text.text != nil {
-//            print ("text: \(abc.text.text)")
-//            print ("textTag: \(abc.text.tag)")
-//        }
-//        
-//        if ingredientCount > 1 {
-//            print(self.ingredientCollection[1]?.text.text)
-//            var abc3 = self.ingredientCollection[1]
-//            print(abc2.text.tag)
-//        }
-        
-        // colour
-        ingredientCollection[ingredientCount]?.text.delegate = self
-        var cell = ingredientCollection[ingredientCount]?.loadViewFromNib()
-        ingredientCollection[ingredientCount]?.view.backgroundColor = UIColor.init(red: 252/255.0, green: 107/255.0, blue: 52/255.0, alpha: 1)
-        ingredientCollection[ingredientCount]?.view1.backgroundColor = UIColor.init(red: 252/255.0, green: 107/255.0, blue: 52/255.0, alpha: 1)
-        if cell != nil {
-            print("tag: \(cell?.tag)")
-            stackView.insertArrangedSubview(cell!, at: (7 + ingredientCount))
-            // removing
-//            stackView.removeArrangedSubview(cell)
-            height1.constant = height1.constant + CGFloat(41)
-            height2.constant = height2.constant + CGFloat(41)
+        if ingredientField.text == "" {
+            ingredientView.shake()
+            ingredientProgress.isHidden = false
+        }
+        else {
+            ingredientProgress.isHidden = true
+            ingredientCount += 1
+            print ("The Count is: \(ingredientCount)")
+            let a = CellV()
+            ingredientCollections.insert(a, at: (ingredientCount - 1))
+
+            
+            ingredientCollections[ingredientCount - 1].text.delegate = self
+            var cell = ingredientCollections[ingredientCount - 1].loadViewFromNib()
+            
+            // Colour
+            // view bar
+            ingredientCollections[ingredientCount - 1].view.backgroundColor = UIColor.init(red: 252/255.0, green: 107/255.0, blue: 52/255.0, alpha: 1)
+            ingredientCollections[ingredientCount - 1].view1.backgroundColor = UIColor.init(red: 252/255.0, green: 107/255.0, blue: 52/255.0, alpha: 1)
+            // progress bar
+            ingredientCollections[ingredientCount - 1].progressBar.tintColor = UIColor.red
+            // title number
+            ingredientCollections[ingredientCount - 1].number.text = String(describing: (ingredientCount + 1))
+            // place holder
+            ingredientCollections[ingredientCount - 1].text.placeholder = "Ingredient " +
+            (ingredientCollections[ingredientCount - 1].number.text)!
+            // aspect fit
+            ingredientCollections[ingredientCount - 1].button.imageView?.contentMode = .scaleAspectFit
+            
+            
+            if cell != nil {
+                print("tag: \(cell.tag)")
+                stackView.insertArrangedSubview(cell, at: (7 + ingredientCount))
+                
+                // adjusting height of constraints
+                height1.constant = height1.constant + CGFloat(41)
+                height2.constant = height2.constant + CGFloat(41)
+                
+                // removing
+                //            stackView.removeArrangedSubview(cell)
+            }
         }
     }
     
     
     @IBAction func instructionButton(_ sender: UIButton) {
-        for allData in ingredientCollection {
-            print("Baby: \(allData?.text.text)")
+        if instructionField.text == "" {
+            instructionView.shake()
+            instructionProgress.isHidden = false
+        }
+        else {
+            instructionProgress.isHidden = true
+            instructionCount += 1
+            print ("The Count is: \(instructionCount)")
+            let a = CellV()
+            instructionCollections.insert(a, at: (instructionCount - 1))
+            
+            
+            instructionCollections[instructionCount - 1].text.delegate = self
+            var cell = instructionCollections[instructionCount - 1].loadViewFromNib()
+            
+            // Colour
+            // view bar
+            instructionCollections[instructionCount - 1].view.backgroundColor = UIColor.init(red: 163/255.0, green: 184/255.0, blue: 58/255.0, alpha: 1)
+            instructionCollections[instructionCount - 1].view1.backgroundColor = UIColor.init(red: 163/255.0, green: 184/255.0, blue: 58/255.0, alpha: 1)
+            // progress bar
+            instructionCollections[instructionCount - 1].progressBar.tintColor = UIColor.red
+            // title number
+            instructionCollections[instructionCount - 1].number.text = String(describing: (instructionCount + 1))
+            // place holder
+            instructionCollections[instructionCount - 1].text.placeholder = "Instruction " +
+                (instructionCollections[instructionCount - 1].number.text)!
+            // aspect fit
+            instructionCollections[instructionCount - 1].button.imageView?.contentMode = .scaleAspectFit
+            
+            
+            if cell != nil {
+                print("tag: \(cell.tag)")
+                stackView.insertArrangedSubview(cell, at: (8 + instructionCount + (ingredientCount + 1)))
+                
+                // adjusting height of constraints
+                height1.constant = height1.constant + CGFloat(41)
+                height2.constant = height2.constant + CGFloat(41)
+            }
         }
     }
     
-    func printText(text: String) {
-        print("papap: \(text)")
+    @IBAction func stepButton(_ sender: UIButton) {
+        if stepField.text == "" {
+            stepView.shake()
+            stepProgress.isHidden = false
+        }
+        else {
+            stepProgress.isHidden = true
+            stepCount += 1
+            print ("The Count is: \(stepCount)")
+            let a = CellV()
+            stepCollections.insert(a, at: (stepCount - 1))
+            
+            
+            stepCollections[stepCount - 1].text.delegate = self
+            var cell = stepCollections[stepCount - 1].loadViewFromNib()
+            
+            // Colour
+            // view bar
+            stepCollections[stepCount - 1].view.backgroundColor = UIColor.init(red: 227/255.0, green: 193/255.0, blue: 80/255.0, alpha: 1)
+            stepCollections[stepCount - 1].view1.backgroundColor = UIColor.init(red: 227/255.0, green: 193/255.0, blue: 80/255.0, alpha: 1)
+            // progress bar
+            stepCollections[stepCount - 1].progressBar.tintColor = UIColor.red
+            // title number
+            stepCollections[stepCount - 1].number.text = String(describing: (stepCount + 1))
+            // place holder
+            stepCollections[stepCount - 1].text.placeholder = "Step " +
+                (stepCollections[stepCount - 1].number.text)!
+            // aspect fit
+            stepCollections[stepCount - 1].button.imageView?.contentMode = .scaleAspectFit
+            
+            
+            if cell != nil {
+                print("tag: \(cell.tag)")
+                stackView.insertArrangedSubview(cell, at: (9 + instructionCount + (instructionCount + 1) + (stepCount + 1)))
+                
+                // adjusting height of constraints
+                height1.constant = height1.constant + CGFloat(41)
+                height2.constant = height2.constant + CGFloat(41)
+            }
+        }
     }
     
-    // testing
+    @IBAction func saveButton(_ sender: UIButton) {
+            ingredient = ingredientField.text!
+            for allData in ingredientCollection {
+                print("Baby: \(allData?.text.text)")
+            }
+            for allData in ingredientCollections {
+                print("Abay: \(allData.text.text)")
+                ingredient?.append(allData.text.text!)
+                print(ingredient)
+            }
+            print (ingredient)
+        
+        instruction = instructionField.text!
+        for allData in instructionCollection {
+            print("Baby: \(allData?.text.text)")
+        }
+        for allData in instructionCollections {
+            print("Abay: \(allData.text.text)")
+            instruction?.append(allData.text.text!)
+            print(instruction)
+        }
+        print (instruction)
+        
+        step = stepField.text!
+        for allData in stepCollection {
+            print("Baby: \(allData?.text.text)")
+        }
+        for allData in stepCollections {
+            print("Abay: \(allData.text.text)")
+            step?.append(allData.text.text!)
+            print(step)
+        }
+        print (step)
+    }
+    
     // UITextField Delegates
     func textFieldDidBeginEditing(_ textField: UITextField) {
-//         animateViewMoving(up: true, moveValue: 280)
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        animateViewMoving(up: false, moveValue: 280)
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true;
@@ -161,19 +314,6 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         return true;
-    }
-    
-    // Jayprakash Dubey code from stack overflow
-    func animateViewMoving (up:Bool, moveValue :CGFloat){
-        let movementDuration:TimeInterval = 0.3
-        let movement:CGFloat = ( up ? -moveValue : moveValue)
-        
-        UIView.beginAnimations("animateView", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(movementDuration)
-        
-        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-        UIView.commitAnimations()
     }
 
 }

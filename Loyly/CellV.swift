@@ -19,6 +19,7 @@ class CellV: UIView, UITextFieldDelegate {
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var text: UITextField!
     @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     //
     private var currentTextField: UITextField?
@@ -75,30 +76,46 @@ class CellV: UIView, UITextFieldDelegate {
     // UITextField Delegates
     // UITextField Delegates
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(textField.text)
+        print(textField.text!)
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.text)
+        print(textField.text!)
+        if textField.text == "" {
+            view.shake()
+            progressBar.isHidden = false
+        } else {
+            progressBar.isHidden = true
+        }
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print(textField.text)
+        print(textField.text!)
         return true;
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        print(textField.text)
+        print(textField.text!)
         return true;
     }
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print(textField.text)
+        print(textField.text!)
         return true;
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print(textField.text)
+        print(textField.text!)
         return true;
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder();
-        print(textField.text)
+        print(textField.text!)
         return true;
+    }
+}
+
+extension UIView {
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.values = [-7.0, 7.0, -7.0, 7.0, -5.0, 5.0, -2.0, 2.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
     }
 }
