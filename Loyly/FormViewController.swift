@@ -8,10 +8,14 @@
 
 import UIKit
 
-class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextFieldDelegate {
+class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldDelegate, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var height1: NSLayoutConstraint!
     @IBOutlet weak var height2: NSLayoutConstraint!
+    @IBOutlet weak var height3: NSLayoutConstraint!
+    @IBOutlet weak var height4: NSLayoutConstraint!
+    
+    @IBOutlet var viewMain: UIView!
     
     @IBOutlet var gameBoardUIView: CellV!
     
@@ -47,8 +51,9 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     
     // Image
     @IBOutlet weak var image: UIImageView!
+    let picker = UIImagePickerController()
     
-    // Add Image
+    // Save All
     @IBOutlet weak var saveAll: UIButton!
     
     // Ingredient Handler
@@ -68,6 +73,9 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     // Step Handler
     var stepCount: Int = 0
     var step: String?
+    
+    // Tags Hadler
+    var tag: String = "Classic"
     
     var stepCollection = [CellV?](repeating: CellV(), count: 64)
     var stepCollections = [CellV]()
@@ -92,11 +100,53 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
         
         // buttons set
         ingredientButton.imageView?.contentMode = .scaleAspectFit
+        
+        // tap gesture to add picture
+        let tapImage = UITapGestureRecognizer.init(target: self, action: #selector(pickImageOptions))
+        tapImage.numberOfTapsRequired = 1
+        tapImage.delegate = self
+        image.addGestureRecognizer(tapImage)
+        picker.delegate = self
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    // tap image
+    func pickImageOptions() {
+        // create the alert
+        let alert = UIAlertController(title: "Profile Image", message: "Set your profile Image", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Select from Gallery", style: UIAlertActionStyle.default, handler: {action in
+            self.pickImage()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.default, handler: { action in
+            self.takeImage()
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func pickImage() {
+        //        print("hello pick Image")
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func takeImage() {
+        //        print("hello take Image")
+        picker.allowsEditing = true
+        picker.sourceType = .camera
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
+    }
+    
     
     // tap
     func dismissKeyboard() {
@@ -127,6 +177,25 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    // tags change
+    @IBAction func tagChanges(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            tag = "Classic"
+        }
+        else if sender.selectedSegmentIndex == 1 {
+            tag = "Modren"
+        }
+        else if sender.selectedSegmentIndex == 2 {
+            tag = "Stembath"
+        }
+        else if sender.selectedSegmentIndex == 3 {
+            tag = "Smoke"
+        }
+        else {
+            tag = "Show"
+        }
     }
 
     @IBAction func ingredientButton(_ sender: UIButton) {
@@ -167,6 +236,8 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
                 // adjusting height of constraints
                 height1.constant = height1.constant + CGFloat(41)
                 height2.constant = height2.constant + CGFloat(41)
+//             s   height3.constant = height3.constant + CGFloat(41)
+                
                 
                 // removing
                 //            stackView.removeArrangedSubview(cell)
@@ -213,6 +284,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
                 // adjusting height of constraints
                 height1.constant = height1.constant + CGFloat(41)
                 height2.constant = height2.constant + CGFloat(41)
+//                height3.constant = height3.constant + CGFloat(41)
             }
         }
     }
@@ -255,15 +327,16 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
                 // adjusting height of constraints
                 height1.constant = height1.constant + CGFloat(41)
                 height2.constant = height2.constant + CGFloat(41)
+//                height3.constant = height3.constant + CGFloat(41)
             }
         }
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
             ingredient = ingredientField.text!
-            for allData in ingredientCollection {
-                print("Baby: \(allData?.text.text)")
-            }
+//            for allData in ingredientCollection {
+//                print("Baby: \(allData?.text.text)")
+//            }
             for allData in ingredientCollections {
                 print("Abay: \(allData.text.text)")
                 ingredient?.append(allData.text.text!)
@@ -272,9 +345,9 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
             print (ingredient)
         
         instruction = instructionField.text!
-        for allData in instructionCollection {
-            print("Baby: \(allData?.text.text)")
-        }
+//        for allData in instructionCollection {
+//            print("Baby: \(allData?.text.text)")
+//        }
         for allData in instructionCollections {
             print("Abay: \(allData.text.text)")
             instruction?.append(allData.text.text!)
@@ -283,15 +356,32 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate, UITextField
         print (instruction)
         
         step = stepField.text!
-        for allData in stepCollection {
-            print("Baby: \(allData?.text.text)")
-        }
+//        for allData in stepCollection {
+//            print("Baby: \(allData?.text.text)")
+//        }
         for allData in stepCollections {
             print("Abay: \(allData.text.text)")
             step?.append(allData.text.text!)
             print(step)
         }
         print (step)
+        print (tag)
+        print (titleField.text)
+        print (timeField.text)
+        
+        // time to call api
+    }
+    
+    // Image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        let chosenImage: UIImage? = info[UIImagePickerControllerEditedImage] as! UIImage?
+        image.image = chosenImage
+        
+        picker.dismiss(animated: true, completion: { _ in })
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: { _ in })
     }
     
     // UITextField Delegates

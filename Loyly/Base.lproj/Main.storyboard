@@ -389,6 +389,9 @@
                                                                     <segment title="Smoke"/>
                                                                     <segment title="Show"/>
                                                                 </segments>
+                                                                <connections>
+                                                                    <action selector="tagChanges:" destination="WYJ-6X-gYE" eventType="valueChanged" id="E3b-ch-BAe"/>
+                                                                </connections>
                                                             </segmentedControl>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.8901960784313725" green="0.75686274509803919" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -763,7 +766,7 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insert-picture-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rjx-Ma-0Gf">
+                                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insert-picture-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rjx-Ma-0Gf">
                                                         <rect key="frame" x="0.0" y="586" width="312" height="374"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9V-5q-M4g">
@@ -781,7 +784,19 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="EPL-Xy-SNZ" firstAttribute="top" secondItem="juf-6c-Khp" secondAttribute="bottom" constant="10" id="5kI-db-B13"/>
+                                                    <constraint firstItem="eXh-Ba-nk8" firstAttribute="top" secondItem="bME-Th-tIz" secondAttribute="bottom" constant="10" id="B0r-lW-Xjn"/>
+                                                    <constraint firstItem="Oeg-rA-JSy" firstAttribute="top" secondItem="ztC-73-YW1" secondAttribute="bottom" constant="10" id="B5y-kU-bfP"/>
+                                                    <constraint firstItem="njj-ss-qaZ" firstAttribute="top" secondItem="EPL-Xy-SNZ" secondAttribute="bottom" constant="10" id="MeH-7J-h4w"/>
+                                                    <constraint firstItem="H9V-5q-M4g" firstAttribute="top" secondItem="rjx-Ma-0Gf" secondAttribute="bottom" constant="10" id="MkQ-pe-n7P"/>
                                                     <constraint firstAttribute="height" constant="1000" id="Oj2-Xv-28P"/>
+                                                    <constraint firstItem="rjx-Ma-0Gf" firstAttribute="top" secondItem="qe8-MR-XPP" secondAttribute="bottom" constant="10" id="SG2-W1-l5f"/>
+                                                    <constraint firstItem="s25-HW-GqU" firstAttribute="top" secondItem="Ul6-Lv-vlX" secondAttribute="top" id="fcV-x9-r6I"/>
+                                                    <constraint firstItem="gkk-yu-nZU" firstAttribute="top" secondItem="njj-ss-qaZ" secondAttribute="bottom" constant="10" id="qas-ru-T9i"/>
+                                                    <constraint firstItem="juf-6c-Khp" firstAttribute="top" secondItem="eXh-Ba-nk8" secondAttribute="bottom" constant="10" id="rgQ-Xw-ESb"/>
+                                                    <constraint firstItem="bME-Th-tIz" firstAttribute="top" secondItem="s25-HW-GqU" secondAttribute="bottom" constant="10" id="u4K-sD-0Oe"/>
+                                                    <constraint firstItem="n1F-Ng-YJx" firstAttribute="top" secondItem="gkk-yu-nZU" secondAttribute="bottom" constant="10" id="vtt-lM-OOO"/>
+                                                    <constraint firstItem="rZI-AU-yaQ" firstAttribute="top" secondItem="ilJ-4y-chu" secondAttribute="bottom" constant="10" id="z9K-sS-JlL"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="subviews">
@@ -825,6 +840,8 @@
                     <connections>
                         <outlet property="height1" destination="kAs-Gd-LQV" id="iKn-bT-64o"/>
                         <outlet property="height2" destination="Oj2-Xv-28P" id="8Uw-yD-cg3"/>
+                        <outlet property="height3" destination="kAs-Gd-LQV" id="GLc-qj-7uX"/>
+                        <outlet property="height4" destination="Oj2-Xv-28P" id="Y5h-1Z-OaP"/>
                         <outlet property="image" destination="rjx-Ma-0Gf" id="YKD-Si-ng7"/>
                         <outlet property="ingredientButton" destination="xs7-FF-e5X" id="9fk-cQ-Olk"/>
                         <outlet property="ingredientField" destination="vSy-o2-UcR" id="2v0-U2-usW"/>
@@ -845,6 +862,7 @@
                         <outlet property="timeView" destination="njj-ss-qaZ" id="icm-vn-FcW"/>
                         <outlet property="titleField" destination="7AX-z8-Cp3" id="vmm-Hk-tjA"/>
                         <outlet property="titleView" destination="bME-Th-tIz" id="9zR-Hv-GEq"/>
+                        <outlet property="viewMain" destination="cla-fh-vK0" id="lhN-4R-ay5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCY-PP-d6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
