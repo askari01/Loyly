@@ -338,38 +338,76 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
 //                print("Baby: \(allData?.text.text)")
 //            }
             for allData in ingredientCollections {
-                print("Abay: \(allData.text.text)")
+//                print("Abay: \(allData.text.text)")
                 ingredient?.append(allData.text.text!)
-                print(ingredient)
+//                print(ingredient)
             }
-            print (ingredient)
+            print (ingredient!)
         
         instruction = instructionField.text!
 //        for allData in instructionCollection {
 //            print("Baby: \(allData?.text.text)")
 //        }
         for allData in instructionCollections {
-            print("Abay: \(allData.text.text)")
+//            print("Abay: \(allData.text.text)")
             instruction?.append(allData.text.text!)
-            print(instruction)
+//            print(instruction)
         }
-        print (instruction)
+        print (instruction!)
         
         step = stepField.text!
 //        for allData in stepCollection {
 //            print("Baby: \(allData?.text.text)")
 //        }
         for allData in stepCollections {
-            print("Abay: \(allData.text.text)")
+//            print("Abay: \(allData.text.text)")
             step?.append(allData.text.text!)
-            print(step)
+//            print(step)
         }
-        print (step)
+        print (step!)
         print (tag)
-        print (titleField.text)
-        print (timeField.text)
+        print (titleField.text!)
+        print (timeField.text!)
         
         // time to call api
+        saveToServer()
+    }
+    
+    func saveToServer() -> String {
+        
+        let url: URL = URL(string: "http://swatshawls.com/loyly/Apis/savedata")!
+        let session = URLSession.shared
+        
+        let request =  NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let imageData = UIImageJPEGRepresentation(image.image!, 1)
+        print(imageData)
+        
+        var base64String: NSString!
+//        let myImage = UIImage(named:"image.png")
+//        let imageData = UIImageJPEGRepresentation(image.image! , 1)
+        base64String = imageData!.base64EncodedString(options: NSData.Base64EncodingOptions.endLineWithLineFeed) as NSString!
+        print(base64String)
+        
+        let pramString = "title=Hello&tags=wow&time=123&ingredients=v1&steps=1234&picture=\(base64String)"
+        request.httpBody = pramString.data(using: String.Encoding.utf8)
+        
+        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
+            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
+                print (error)
+                return
+            }
+            if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) {
+                print (dataString)
+            }
+        }
+        task.resume()
+        
+        
+        // new
+        
+        return "success"
     }
     
     // Image
