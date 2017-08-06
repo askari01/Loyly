@@ -10,6 +10,8 @@
 		3601D9CC1F2C758900E53372 /* CellV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3601D9CB1F2C758900E53372 /* CellV.xib */; };
 		3601D9CE1F2C7AB000E53372 /* CellV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D9CD1F2C7AB000E53372 /* CellV.swift */; };
 		3601D9D21F2C823000E53372 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D9D11F2C823000E53372 /* FormViewController.swift */; };
+		36077BA91F361FE500EDA15F /* CreateAgfussVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36077BA81F361FE500EDA15F /* CreateAgfussVC.swift */; };
+		36077BAB1F36207900EDA15F /* AgfussCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36077BAA1F36207900EDA15F /* AgfussCell.swift */; };
 		360FDAB91F161CCE00E7FF9B /* caution_a3-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 360FDAB81F161CCE00E7FF9B /* caution_a3-min.pdf */; };
 		36332A3E1F122F7700416442 /* OilDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36332A3D1F122F7700416442 /* OilDetailVC.swift */; };
 		3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C01F12005500B7B8E2 /* Oils.swift */; };
@@ -36,6 +38,8 @@
 		3601D9CB1F2C758900E53372 /* CellV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellV.xib; sourceTree = "<group>"; };
 		3601D9CD1F2C7AB000E53372 /* CellV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellV.swift; sourceTree = "<group>"; };
 		3601D9D11F2C823000E53372 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		36077BA81F361FE500EDA15F /* CreateAgfussVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAgfussVC.swift; sourceTree = "<group>"; };
+		36077BAA1F36207900EDA15F /* AgfussCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgfussCell.swift; sourceTree = "<group>"; };
 		360FDAB81F161CCE00E7FF9B /* caution_a3-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "caution_a3-min.pdf"; sourceTree = "<group>"; };
 		36332A3D1F122F7700416442 /* OilDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilDetailVC.swift; sourceTree = "<group>"; };
 		3661B6C01F12005500B7B8E2 /* Oils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oils.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 				36C2099E1F14EE7E004F55F8 /* ChartVC.swift */,
 				3601D9CD1F2C7AB000E53372 /* CellV.swift */,
 				3601D9D11F2C823000E53372 /* FormViewController.swift */,
+				36077BA81F361FE500EDA15F /* CreateAgfussVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				3661B6C31F120B6600B7B8E2 /* OilCell.swift */,
+				36077BAA1F36207900EDA15F /* AgfussCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				366F7A0A1F12123900117B32 /* csv.swift in Sources */,
 				3601D9D21F2C823000E53372 /* FormViewController.swift in Sources */,
 				36B12CFB1F0E385B00B2FEB4 /* ViewController.swift in Sources */,
+				36077BAB1F36207900EDA15F /* AgfussCell.swift in Sources */,
 				36C346021F22635300247457 /* GetData.swift in Sources */,
 				3661B6C41F120B6600B7B8E2 /* OilCell.swift in Sources */,
 				36C2099D1F14E9CC004F55F8 /* ChartsVC.swift in Sources */,
@@ -259,6 +266,7 @@
 				3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */,
 				36B12CF91F0E385B00B2FEB4 /* AppDelegate.swift in Sources */,
 				36C2099F1F14EE7E004F55F8 /* ChartVC.swift in Sources */,
+				36077BA91F361FE500EDA15F /* CreateAgfussVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
