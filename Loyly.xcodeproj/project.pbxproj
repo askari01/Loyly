@@ -32,9 +32,11 @@
 		36C346021F22635300247457 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C346011F22635300247457 /* GetData.swift */; };
 		36EE5C631F0F7D67002809BA /* Oils.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5C611F0F7D67002809BA /* Oils.xcdatamodeld */; };
 		36EE5C651F0F9297002809BA /* oils.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36EE5C641F0F9297002809BA /* oils.strings */; };
+		73592FC28059D717634DE2FB /* Pods_Loyly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22EEC22E1658348DBC31371E /* Pods-Loyly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loyly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Loyly/Pods-Loyly.release.xcconfig"; sourceTree = "<group>"; };
 		3601D9CB1F2C758900E53372 /* CellV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellV.xib; sourceTree = "<group>"; };
 		3601D9CD1F2C7AB000E53372 /* CellV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellV.swift; sourceTree = "<group>"; };
 		3601D9D11F2C823000E53372 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		36C346011F22635300247457 /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		36EE5C621F0F7D67002809BA /* Oils.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Oils.xcdatamodel; sourceTree = "<group>"; };
 		36EE5C641F0F9297002809BA /* oils.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = oils.strings; path = ../oils.strings; sourceTree = "<group>"; };
+		3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loyly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46DFE37A3CE39FF50C15D937 /* Pods-Loyly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loyly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Loyly/Pods-Loyly.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73592FC28059D717634DE2FB /* Pods_Loyly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +137,8 @@
 			children = (
 				36B12CF71F0E385B00B2FEB4 /* Loyly */,
 				36B12CF61F0E385B00B2FEB4 /* Products */,
+				3ACE1FEF6804DB464936BE7B /* Pods */,
+				D42955EDB2372E13531DDF6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +179,23 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		3ACE1FEF6804DB464936BE7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46DFE37A3CE39FF50C15D937 /* Pods-Loyly.debug.xcconfig */,
+				22EEC22E1658348DBC31371E /* Pods-Loyly.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D42955EDB2372E13531DDF6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B12D071F0E385B00B2FEB4 /* Build configuration list for PBXNativeTarget "Loyly" */;
 			buildPhases = (
+				1C466196061329F3AA0B0DF7 /* [CP] Check Pods Manifest.lock */,
 				36B12CF11F0E385B00B2FEB4 /* Sources */,
 				36B12CF21F0E385B00B2FEB4 /* Frameworks */,
 				36B12CF31F0E385B00B2FEB4 /* Resources */,
+				1DF40A7DA82DCD6802E00807 /* [CP] Embed Pods Frameworks */,
+				05A09546D86747DDE81C26F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,6 +272,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05A09546D86747DDE81C26F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Loyly/Pods-Loyly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C466196061329F3AA0B0DF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1DF40A7DA82DCD6802E00807 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Loyly/Pods-Loyly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36B12CF11F0E385B00B2FEB4 /* Sources */ = {
@@ -389,6 +464,7 @@
 		};
 		36B12D081F0E385B00B2FEB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46DFE37A3CE39FF50C15D937 /* Pods-Loyly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3D5VRNJS79;
@@ -403,6 +479,7 @@
 		};
 		36B12D091F0E385B00B2FEB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22EEC22E1658348DBC31371E /* Pods-Loyly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3D5VRNJS79;

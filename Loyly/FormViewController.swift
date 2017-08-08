@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldDelegate, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var stackView: UIStackView!
@@ -375,37 +376,95 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
     
     func saveToServer() -> String {
         
-        let url: URL = URL(string: "http://swatshawls.com/loyly/Apis/savedata")!
-        let session = URLSession.shared
-        
-        let request =  NSMutableURLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        let imageData = UIImageJPEGRepresentation(image.image!, 1)
-        print(imageData)
-        
-        var base64String: NSString!
-//        let myImage = UIImage(named:"image.png")
-//        let imageData = UIImageJPEGRepresentation(image.image! , 1)
-        base64String = imageData!.base64EncodedString(options: NSData.Base64EncodingOptions.endLineWithLineFeed) as NSString!
-        print(base64String)
-        
-        let pramString = "title=Hello&tags=wow&time=123&ingredients=v1&steps=1234&picture=\(base64String)"
-        request.httpBody = pramString.data(using: String.Encoding.utf8)
-        
-        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
-            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
-                print (error)
-                return
-            }
-            if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) {
-                print (dataString)
-            }
-        }
-        task.resume()
+//        let url: URL = URL(string: "http://swatshawls.com/loyly/Apis/savedata")!
+//        let session = URLSession.shared
+//        
+//        let request =  NSMutableURLRequest(url: url)
+//        request.httpMethod = "POST"
+//        
+//        let imageData = UIImageJPEGRepresentation(image.image!, 1)
+//        print(imageData)
+//        
+//        var base64String: NSString!
+////        let myImage = UIImage(named:"image.png")
+////        let imageData = UIImageJPEGRepresentation(image.image! , 1)
+//        base64String = imageData!.base64EncodedString(options: NSData.Base64EncodingOptions.endLineWithLineFeed) as NSString!
+//        print(base64String)
+//        
+//        let pramString = "title=Hello&tags=wow&time=123&ingredients=v1&steps=1234&picture=\(base64String)"
+//        request.httpBody = pramString.data(using: String.Encoding.utf8)
+//        
+//        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
+//            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
+//                print (error)
+//                return
+//            }
+//            if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) {
+//                print (dataString)
+//            }
+//        }
+//        task.resume()
         
         
         // new
+        var parameters = [String: String]()
+        parameters = [
+                    "name": "Title test"
+                ,
+                    "tags": "tag1,tag2,tag3"
+                ,
+                    "time": "12345"
+                ,
+                    "ingredients": "ing1, ing2, ing 3"
+                ,
+                    "steps": "step1, step2, step3"
+                ,
+                    "picture": "hi"
+        ]
+        
+        let name = "Hello World"
+        let dataName = name.data(using: .utf8)!
+        
+        let tags = "Hello"
+        let dataTags = tags.data(using: .utf8)!
+        
+        let time = "Hello World"
+        let dataTime = time.data(using: .utf8)!
+        
+        let ingredients = "Hello World"
+        let dataIngredients = ingredients.data(using: .utf8)!
+        
+        let steps = "Hello World"
+        let dataSteps = steps.data(using: .utf8)!
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+//                for (key, value) in parameters {
+//                    multipartFormData.append(value.data(using: .utf8)!, withName: key)
+//                }
+                multipartFormData.append(UIImageJPEGRepresentation(self.image.image!, 1)!, withName: "picture", fileName: "hi.jpeg", mimeType: "image/jpeg")
+
+//                multipartFormData.append(imageData!, withName: "picture")
+                multipartFormData.append(dataName, withName: "title")
+                multipartFormData.append(dataTags, withName: "tags")
+                multipartFormData.append(dataTime, withName: "time")
+                multipartFormData.append(dataIngredients, withName: "ingredients")
+                multipartFormData.append(dataSteps, withName: "steps")
+//                multipartFormData.append(rainbowImageURL, withName: "rainbow")
+        },
+            to: "http://swatshawls.com/loyly/Apis/savedata",
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseString { response in
+                        debugPrint(response)
+                    }
+                case .failure(let encodingError):
+                    print(encodingError)
+                }
+        }
+        )
+        // end new
         
         return "success"
     }
