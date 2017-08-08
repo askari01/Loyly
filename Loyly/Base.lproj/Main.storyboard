@@ -177,6 +177,9 @@
                                     <constraint firstAttribute="width" constant="118" id="OsK-b7-8Tj"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="contbtn"/>
+                                <connections>
+                                    <segue destination="4cE-zT-uM5" kind="show" id="qm5-po-eu6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -295,6 +298,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GC6-AX-xj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3774.375" y="133.09859154929578"/>
+        </scene>
+        <!--CONTACT US-->
+        <scene sceneID="1PV-qV-ITD">
+            <objects>
+                <viewController id="4cE-zT-uM5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YqI-DY-txp"/>
+                        <viewControllerLayoutGuide type="bottom" id="vys-Nd-N3U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xca-ha-XUA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact us" translatesAutoresizingMaskIntoConstraints="NO" id="lEk-Do-X6t">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lEk-Do-X6t" secondAttribute="trailing" id="1Oa-Hp-V8l"/>
+                            <constraint firstItem="lEk-Do-X6t" firstAttribute="top" secondItem="YqI-DY-txp" secondAttribute="bottom" constant="-44" id="hu0-bc-NWv"/>
+                            <constraint firstItem="lEk-Do-X6t" firstAttribute="leading" secondItem="Xca-ha-XUA" secondAttribute="leading" id="sVw-kK-AV5"/>
+                            <constraint firstItem="vys-Nd-N3U" firstAttribute="top" secondItem="lEk-Do-X6t" secondAttribute="bottom" id="zS7-Fg-qtr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="CONTACT US" id="INc-Fi-ONV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0b-Q3-ukf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1353.75" y="936.97183098591552"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pzH-dP-WTo">
@@ -1412,6 +1445,7 @@
         <image name="background2" width="1890" height="3087"/>
         <image name="caution_a3-min" width="800" height="1131"/>
         <image name="chrtbtn" width="591" height="258"/>
+        <image name="contact us" width="809" height="1426"/>
         <image name="contbtn" width="595" height="262"/>
         <image name="deutsch" width="825" height="249"/>
         <image name="edubtn" width="611" height="266"/>
