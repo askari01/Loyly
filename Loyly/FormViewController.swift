@@ -59,21 +59,21 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
     
     // Ingredient Handler
     var ingredientCount: Int = 0
-    var ingredient: String?
+    var ingredient: String = "1"
     
     var ingredientCollection = [CellV?](repeating: CellV(), count: 64)
     var ingredientCollections = [CellV]()
     
     // Instruction Handler
     var instructionCount: Int = 0
-    var instruction: String?
+    var instruction: String = "1"
     
     var instructionCollection = [CellV?](repeating: CellV(), count: 64)
     var instructionCollections = [CellV]()
     
     // Step Handler
     var stepCount: Int = 0
-    var step: String?
+    var step: String = "1"
     
     // Tags Hadler
     var tag: String = "Classic"
@@ -161,9 +161,9 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {(action: UIAlertAction!) in
             print("Game Over")
-            self.ingredient?.append("\n")
-            self.ingredient?.append(String(describing:(self.ingredientCount + 1)))
-            self.ingredient?.append(text)
+            self.ingredient.append("\n")
+            self.ingredient.append(String(describing:(self.ingredientCount + 1)))
+            self.ingredient.append(text)
             print(self.ingredient)
         }))
         
@@ -237,7 +237,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
                 // adjusting height of constraints
                 height1.constant = height1.constant + CGFloat(41)
                 height2.constant = height2.constant + CGFloat(41)
-//             s   height3.constant = height3.constant + CGFloat(41)
+//                height3.constant = height3.constant + CGFloat(41)
                 
                 
                 // removing
@@ -334,38 +334,37 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-            ingredient = ingredientField.text!
-//            for allData in ingredientCollection {
-//                print("Baby: \(allData?.text.text)")
-//            }
-            for allData in ingredientCollections {
-//                print("Abay: \(allData.text.text)")
-                ingredient?.append(allData.text.text!)
-//                print(ingredient)
-            }
-            print (ingredient!)
+        var i = 2
+//        ingredient.append(String(describing: i))
+//        i = i+1
+        ingredient = ingredient + ingredientField.text!
         
-        instruction = instructionField.text!
-//        for allData in instructionCollection {
-//            print("Baby: \(allData?.text.text)")
-//        }
-        for allData in instructionCollections {
-//            print("Abay: \(allData.text.text)")
-            instruction?.append(allData.text.text!)
-//            print(instruction)
+        for allData in ingredientCollections {
+            step.append("\n")
+            ingredient.append(String(describing: i))
+            ingredient.append(allData.text.text!)
+            i = i+1
         }
-        print (instruction!)
+        print (ingredient)
         
-        step = stepField.text!
-//        for allData in stepCollection {
-//            print("Baby: \(allData?.text.text)")
+//        instruction = instructionField.text!
+//        for allData in instructionCollections {
+//            instruction?.append(allData.text.text!)
 //        }
+//        print (instruction!)
+        
+        var j = 2
+//        step?.append(String(describing: j))
+//        j = j + 1
+        step = step + stepField.text!
         for allData in stepCollections {
-//            print("Abay: \(allData.text.text)")
-            step?.append(allData.text.text!)
-//            print(step)
+            step.append("\n")
+            step.append(String(describing: j))
+            step.append(allData.text.text!)
+            j = j + 1
         }
-        print (step!)
+        
+        print (step)
         print (tag)
         print (titleField.text!)
         print (timeField.text!)
@@ -376,81 +375,29 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
     
     func saveToServer() -> String {
         
-//        let url: URL = URL(string: "http://swatshawls.com/loyly/Apis/savedata")!
-//        let session = URLSession.shared
-//        
-//        let request =  NSMutableURLRequest(url: url)
-//        request.httpMethod = "POST"
-//        
-//        let imageData = UIImageJPEGRepresentation(image.image!, 1)
-//        print(imageData)
-//        
-//        var base64String: NSString!
-////        let myImage = UIImage(named:"image.png")
-////        let imageData = UIImageJPEGRepresentation(image.image! , 1)
-//        base64String = imageData!.base64EncodedString(options: NSData.Base64EncodingOptions.endLineWithLineFeed) as NSString!
-//        print(base64String)
-//        
-//        let pramString = "title=Hello&tags=wow&time=123&ingredients=v1&steps=1234&picture=\(base64String)"
-//        request.httpBody = pramString.data(using: String.Encoding.utf8)
-//        
-//        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
-//            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
-//                print (error)
-//                return
-//            }
-//            if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) {
-//                print (dataString)
-//            }
-//        }
-//        task.resume()
-        
-        
-        // new
-        var parameters = [String: String]()
-        parameters = [
-                    "name": "Title test"
-                ,
-                    "tags": "tag1,tag2,tag3"
-                ,
-                    "time": "12345"
-                ,
-                    "ingredients": "ing1, ing2, ing 3"
-                ,
-                    "steps": "step1, step2, step3"
-                ,
-                    "picture": "hi"
-        ]
-        
-        let name = "Hello World"
+        let name = timeField.text!
         let dataName = name.data(using: .utf8)!
         
-        let tags = "Hello"
+        let tags = tag
         let dataTags = tags.data(using: .utf8)!
         
-        let time = "Hello World"
+        let time = timeField.text!
         let dataTime = time.data(using: .utf8)!
         
-        let ingredients = "Hello World"
+        let ingredients = ingredient
         let dataIngredients = ingredients.data(using: .utf8)!
         
-        let steps = "Hello World"
+        let steps = step
         let dataSteps = steps.data(using: .utf8)!
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-//                for (key, value) in parameters {
-//                    multipartFormData.append(value.data(using: .utf8)!, withName: key)
-//                }
                 multipartFormData.append(UIImageJPEGRepresentation(self.image.image!, 1)!, withName: "picture", fileName: "hi.jpeg", mimeType: "image/jpeg")
-
-//                multipartFormData.append(imageData!, withName: "picture")
                 multipartFormData.append(dataName, withName: "title")
                 multipartFormData.append(dataTags, withName: "tags")
                 multipartFormData.append(dataTime, withName: "time")
                 multipartFormData.append(dataIngredients, withName: "ingredients")
                 multipartFormData.append(dataSteps, withName: "steps")
-//                multipartFormData.append(rainbowImageURL, withName: "rainbow")
         },
             to: "http://swatshawls.com/loyly/Apis/savedata",
             encodingCompletion: { encodingResult in
@@ -462,9 +409,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
                 case .failure(let encodingError):
                     print(encodingError)
                 }
-        }
-        )
-        // end new
+        })
         
         return "success"
     }

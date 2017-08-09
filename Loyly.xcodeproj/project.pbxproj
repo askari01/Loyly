@@ -24,6 +24,7 @@
 		36B12D001F0E385B00B2FEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B12CFF1F0E385B00B2FEB4 /* Assets.xcassets */; };
 		36B12D031F0E385B00B2FEB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B12D011F0E385B00B2FEB4 /* LaunchScreen.storyboard */; };
 		36B12D0B1F0E51E700B2FEB4 /* EssentialOilsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B12D0A1F0E51E700B2FEB4 /* EssentialOilsVC.swift */; };
+		36BF89CC1F3AE40A009BC64C /* Agfuss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF89CB1F3AE40A009BC64C /* Agfuss.swift */; };
 		36C2099D1F14E9CC004F55F8 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C2099C1F14E9CC004F55F8 /* ChartsVC.swift */; };
 		36C2099F1F14EE7E004F55F8 /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C2099E1F14EE7E004F55F8 /* ChartVC.swift */; };
 		36C209A11F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 36C209A01F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf */; };
@@ -56,6 +57,7 @@
 		36B12D021F0E385B00B2FEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B12D041F0E385B00B2FEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B12D0A1F0E51E700B2FEB4 /* EssentialOilsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialOilsVC.swift; sourceTree = "<group>"; };
+		36BF89CB1F3AE40A009BC64C /* Agfuss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agfuss.swift; sourceTree = "<group>"; };
 		36C2099C1F14E9CC004F55F8 /* ChartsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 		36C2099E1F14EE7E004F55F8 /* ChartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
 		36C209A01F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "harmonized_blending_a3_en-min.pdf"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				3661B6C01F12005500B7B8E2 /* Oils.swift */,
+				36BF89CB1F3AE40A009BC64C /* Agfuss.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36EE5C631F0F7D67002809BA /* Oils.xcdatamodeld in Sources */,
+				36BF89CC1F3AE40A009BC64C /* Agfuss.swift in Sources */,
 				366F7A0A1F12123900117B32 /* csv.swift in Sources */,
 				3601D9D21F2C823000E53372 /* FormViewController.swift in Sources */,
 				36B12CFB1F0E385B00B2FEB4 /* ViewController.swift in Sources */,

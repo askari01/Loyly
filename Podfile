@@ -7,4 +7,5 @@ target 'Loyly' do
 
   # Pods for Loyly
   pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON'
 end
