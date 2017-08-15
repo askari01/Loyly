@@ -20,6 +20,15 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
     
     @IBOutlet var gameBoardUIView: CellV!
     
+    // Sections
+    @IBOutlet weak var titleSection: UILabel!
+    @IBOutlet weak var tagSection: UILabel!
+    @IBOutlet weak var timeSection: UILabel!
+    @IBOutlet weak var ingredientSection: UILabel!
+    @IBOutlet weak var instructionSection: UILabel!
+    @IBOutlet weak var imageSection: UILabel!
+    
+    
     // Title
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleField: UITextField!
@@ -108,6 +117,28 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         tapImage.delegate = self
         image.addGestureRecognizer(tapImage)
         picker.delegate = self
+        
+//        // testing shadow
+//        let radius: CGFloat = titleSection.frame.width / 2.0 //change it to .height if you need spread for height
+//        let shadowPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: 2.1 * radius, height: titleSection.frame.height))
+//        //Change 2.1 to amount of spread you need and for height replace the code for height
+//        
+//        titleSection.layer.cornerRadius = 2
+//        titleSection.layer.shadowColor = UIColor.black.cgColor
+//        titleSection.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)  //Here you control x and y
+//        titleSection.layer.shadowOpacity = 0.5
+//        titleSection.layer.shadowRadius = 5.0 //Here your control your blur
+//        titleSection.layer.masksToBounds =  false
+//        titleSection.layer.shadowPath = shadowPath.cgPath
+        
+//        titleSection.layer.shadowColor = UIColor.black.cgColor
+//        titleSection.layer.shadowOpacity = 1
+//        titleSection.layer.shadowOffset = CGSize.zero
+//        titleSection.layer.shadowRadius = 10
+//        
+//        titleSection.layer.shadowPath = UIBezierPath(rect: titleSection.bounds).cgPath
+//        titleSection.layer.shouldRasterize = true
+        
     }
     
     override func awakeFromNib() {
@@ -340,7 +371,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         ingredient = ingredient + ingredientField.text!
         
         for allData in ingredientCollections {
-            step.append("\n")
+            step.append("*")
             ingredient.append(String(describing: i))
             ingredient.append(allData.text.text!)
             i = i+1
@@ -358,7 +389,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
 //        j = j + 1
         step = step + stepField.text!
         for allData in stepCollections {
-            step.append("\n")
+            step.append("*")
             step.append(String(describing: j))
             step.append(allData.text.text!)
             j = j + 1

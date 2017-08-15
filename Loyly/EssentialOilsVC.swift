@@ -39,7 +39,7 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
     }
     
     func parseOilCSV() {
-        let path = Bundle.main.path(forResource: "oils", ofType: "csv")!
+        let path = Bundle.main.path(forResource: "oils_data", ofType: "csv")!
         
         do {
             let csv = try CSV(contentsOfURL: path)
@@ -54,9 +54,9 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
                 let plantFamilyOil = row["plantFamily"]!
                 let originOil = row["origin"]!
                 let noteOil = row["note"]!
-                let effectOil = row["effect"]!
+                let effectOil = "Dummy"
                 let strengthOil = row["strength"]!
-                let fragranceOil = row["fragrance"]!
+                let fragranceOil = "Dummy1"
                 
                 let oil = Oils(name: oilNameOil, botanicalName: botanicalNameOil, plantFamily: plantFamilyOil, origin: originOil, note: noteOil, effect: effectOil, strength: strengthOil, fragrance: fragranceOil)
                 oils.append(oil)

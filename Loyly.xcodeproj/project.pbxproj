@@ -31,8 +31,10 @@
 		36C209A31F14F682004F55F8 /* eo_instruction_a3_en-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */; };
 		36C345FE1F22630A00247457 /* Apis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C345FD1F22630A00247457 /* Apis.swift */; };
 		36C346021F22635300247457 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C346011F22635300247457 /* GetData.swift */; };
+		36E7E1461F3F5B940020F6A7 /* oils_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36E7E1451F3F5B940020F6A7 /* oils_data.csv */; };
 		36EE5C631F0F7D67002809BA /* Oils.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5C611F0F7D67002809BA /* Oils.xcdatamodeld */; };
 		36EE5C651F0F9297002809BA /* oils.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36EE5C641F0F9297002809BA /* oils.strings */; };
+		36F36FA51F42DB72008E3F9B /* AgfussDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */; };
 		73592FC28059D717634DE2FB /* Pods_Loyly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +66,10 @@
 		36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "eo_instruction_a3_en-min.pdf"; sourceTree = "<group>"; };
 		36C345FD1F22630A00247457 /* Apis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apis.swift; sourceTree = "<group>"; };
 		36C346011F22635300247457 /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
+		36E7E1451F3F5B940020F6A7 /* oils_data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oils_data.csv; sourceTree = "<group>"; };
 		36EE5C621F0F7D67002809BA /* Oils.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Oils.xcdatamodel; sourceTree = "<group>"; };
 		36EE5C641F0F9297002809BA /* oils.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = oils.strings; path = ../oils.strings; sourceTree = "<group>"; };
+		36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgfussDetailVC.swift; sourceTree = "<group>"; };
 		3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loyly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46DFE37A3CE39FF50C15D937 /* Pods-Loyly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loyly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Loyly/Pods-Loyly.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +97,7 @@
 				3601D9CD1F2C7AB000E53372 /* CellV.swift */,
 				3601D9D11F2C823000E53372 /* FormViewController.swift */,
 				36077BA81F361FE500EDA15F /* CreateAgfussVC.swift */,
+				36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */,
 				360FDAB81F161CCE00E7FF9B /* caution_a3-min.pdf */,
 				366F7A061F12115C00117B32 /* oils.csv */,
+				36E7E1451F3F5B940020F6A7 /* oils_data.csv */,
 				36C345FD1F22630A00247457 /* Apis.swift */,
 			);
 			name = Resources;
@@ -229,7 +235,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Syed Askari";
 				TargetAttributes = {
 					36B12CF41F0E385B00B2FEB4 = {
@@ -263,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B12D031F0E385B00B2FEB4 /* LaunchScreen.storyboard in Resources */,
+				36E7E1461F3F5B940020F6A7 /* oils_data.csv in Resources */,
 				360FDAB91F161CCE00E7FF9B /* caution_a3-min.pdf in Resources */,
 				36B12D001F0E385B00B2FEB4 /* Assets.xcassets in Resources */,
 				366F7A071F12115C00117B32 /* oils.csv in Resources */,
@@ -339,6 +346,7 @@
 				3661B6C41F120B6600B7B8E2 /* OilCell.swift in Sources */,
 				36C2099D1F14E9CC004F55F8 /* ChartsVC.swift in Sources */,
 				36332A3E1F122F7700416442 /* OilDetailVC.swift in Sources */,
+				36F36FA51F42DB72008E3F9B /* AgfussDetailVC.swift in Sources */,
 				3601D9CE1F2C7AB000E53372 /* CellV.swift in Sources */,
 				36C345FE1F22630A00247457 /* Apis.swift in Sources */,
 				36B12D0B1F0E51E700B2FEB4 /* EssentialOilsVC.swift in Sources */,
@@ -381,7 +389,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -389,7 +399,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -432,7 +446,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -440,7 +456,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
