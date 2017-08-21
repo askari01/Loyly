@@ -17,6 +17,8 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     var count = 0
     var agfusses = [Agfuss]()
     var json: JSON!
+    var my:Int = 0
+    var tag: String = "All"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +45,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+      //  print(indexPath)
         var agfus: Agfuss!
         agfus = agfusses[indexPath.row]
         performSegue(withIdentifier: "agfussDetails", sender: agfus)
@@ -52,7 +54,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? AgfussCell {
-            print (indexPath.row)
+           // print (indexPath.row)
             var title = String(describing: self.json["data"][indexPath.row]["title"])
             var tag = String(describing: self.json["data"][indexPath.row]["tags"])
             var time = String(describing: self.json["data"][indexPath.row]["time"])
@@ -75,8 +77,58 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    @IBAction func valueChangeMy(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            my = 0
+            getData()
+        } else if sender.selectedSegmentIndex == 1 {
+            my = 1
+            getData()
+        }
+    }
+    
+    @IBAction func valueChangeTag(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            tag = "Classic"
+            getData()
+        } else if sender.selectedSegmentIndex == 1 {
+            tag = "Modern"
+            getData()
+        } else if sender.selectedSegmentIndex == 2 {
+            tag = "Steambath"
+            getData()
+        } else if sender.selectedSegmentIndex == 3 {
+            tag = "Smoke"
+            getData()
+        } else if sender.selectedSegmentIndex == 4 {
+            tag = "Show"
+            getData()
+        } else if sender.selectedSegmentIndex == 5 {
+            tag = "All"
+            getData()
+        }
+    }
+    
+    
     func getData() {
-        Alamofire.request("http://swatshawls.com/loyly/Apis/getdata").responseJSON { response in
+        var url: String = ""
+        if my == 1 {
+            url = "http://swatshawls.com/loyly/Apis/getdata/1"
+        } else if my == 0 && tag == "All" {
+            url = "http://swatshawls.com/loyly/Apis/getdata"
+        } else if my == 0 && tag == "Classic" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Classic"
+        } else if my == 0 && tag == "Modern" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Modern"
+        } else if my == 0 && tag == "Steambath" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Steambath"
+        } else if my == 0 && tag == "Smoke" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Smoke"
+        } else if my == 0 && tag == "Show" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Show"
+        }
+        
+        Alamofire.request(url).responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
