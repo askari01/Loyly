@@ -35,6 +35,7 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         instruction.dataSource = self
         
         print(agfuss)
+        image.kf.setImage(with: agfuss.picture)
         name.text = agfuss.title
         tag.text = agfuss.tag
         time.text = agfuss.time

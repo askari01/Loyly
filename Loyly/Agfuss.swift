@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 class Agfuss {
 
@@ -15,7 +17,7 @@ class Agfuss {
     private var _time: String!
     private var _ingredients: String!
     private var _steps: String!
-    private var _picture: String!
+    private var _picture: URL!
     
     //data protection
     
@@ -39,11 +41,11 @@ class Agfuss {
         return _steps
     }
     
-    var picture: String {
+    var picture: URL {
         return _picture
     }
     
-    init(title: String, tag: String, time: String, ingredients: String, steps: String, picture: String) {
+    init(title: String, tag: String, time: String, ingredients: String, steps: String, picture: URL) {
         _title = title
         _tag = tag
         _time = time

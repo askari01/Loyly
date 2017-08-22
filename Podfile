@@ -9,4 +9,5 @@ target 'Loyly' do
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
   pod 'GradientLoadingBar', '~> 1.0'
+  pod 'Kingfisher', '~> 3.11.0’
 end

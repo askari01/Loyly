@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Kingfisher
 
 class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -20,6 +21,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     var my:Int = 0
     var tag: String = "All"
     let pref = UserDefaults()
+    var image = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,13 +61,21 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
             var title = String(describing: self.json["data"][indexPath.row]["title"])
             var tag = String(describing: self.json["data"][indexPath.row]["tags"])
             var time = String(describing: self.json["data"][indexPath.row]["time"])
-            cell.setValues(title: title, tag: tag, time1: time)
+            cell.tag = indexPath.row
+            var img = String(describing: self.json["data"][indexPath.row]["pic_renamed"])
+            let url = URL(string: "http:swatshawls.com/loyly/assets/uploads/\(img)")
             
+            cell.setValues(title: title, tag: tag, time1: time, picture1: url!)
+
             return cell
             
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -140,22 +150,28 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response
                 self.json = JSON(response.result.value)
+                self.agfusses.removeAll()
                 print (self.json)
             }
             self.count = self.json["data"].count
             self.tableView.reloadData()
+
             print (self.json["data"].count)
             
             for row in self.json["data"] {
+                print ("Image Count: \(self.image.count)")
                 var title = String(describing: self.json["data"][Int(row.0)!]["title"])
                 var tag = String(describing: self.json["data"][Int(row.0)!]["tags"])
                 var time = String(describing: self.json["data"][Int(row.0)!]["time"])
                 var id = String(describing: self.json["data"][Int(row.0)!]["id"])
                 var ingredient = String(describing: self.json["data"][Int(row.0)!]["ingredient"])
                 var step = String(describing: self.json["data"][Int(row.0)!]["step"])
+                var img = String(describing: self.json["data"][Int(row.0)!]["pic_renamed"])
+                let url = URL(string: "http:swatshawls.com/loyly/assets/uploads/\(img)")
+                
                 var picture = String(describing: self.json["data"][Int(row.0)!]["picture"])
                 print (id)
-                let agfuss = Agfuss(title: title, tag: tag, time: time, ingredients: ingredient, steps: step, picture: picture)
+                let agfuss = Agfuss(title: title, tag: tag, time: time, ingredients: ingredient, steps: step, picture: url!)
                 self.agfusses.append(agfuss)
             }
             

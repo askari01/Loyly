@@ -41,8 +41,8 @@ class AgfussCell: UITableViewCell {
         self.time1.text = self.agfuss.time
     }
     
-    func setValues(title: String, tag: String, time1: String ) {
-//        self.picture1.image = UIImage(named: self.agfuss.title)
+    func setValues(title: String, tag: String, time1: String, picture1: URL ) {
+        self.picture1.kf.setImage(with: picture1)
         self.title1.text = title.capitalized
         self.tag1.text = tag
         self.time1.text = time1

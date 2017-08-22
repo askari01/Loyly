@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.5.0)
   - GradientLoadingBar (1.1.1)
+  - Kingfisher (3.11.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - GradientLoadingBar (~> 1.0)
+  - Kingfisher (~> 3.11.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   GradientLoadingBar: ee247760b6b24a922584b724749a1d48bcc0d905
+  Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6cfba864667ef5135e04426e449d02f913151a8f
+PODFILE CHECKSUM: 2510ff37ab9f37c8544918b7639a50ea83e04b5f
 
 COCOAPODS: 1.2.1
