@@ -9,11 +9,20 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import GradientLoadingBar
 
 class VerifyCodeVC: UIViewController {
     @IBOutlet weak var code: UITextField!
     
     var json: JSON!
+    let loadingBar = GradientLoadingBar(
+        height: 3.0,
+        durations: Durations(fadeIn: 1.0, fadeOut: 2.0, progress: 3.0),
+        gradientColors: [
+            UIColor(hexString:"#4cd964").cgColor,
+            UIColor(hexString:"#ff2d55").cgColor
+        ]
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +37,13 @@ class VerifyCodeVC: UIViewController {
     
     @IBAction func verifyAction(_ sender: UIButton) {
         if code.text != "" {
+            loadingBar.show()
             var check = verify(code: code.text!)
             if check {
                 performSegue(withIdentifier: "setNewPassword", sender: self)
             } else {
-                code.shake()
-                code.text = ""
+//                code.shake()
+//                code.text = ""
             }
         }
     }
@@ -64,11 +74,15 @@ class VerifyCodeVC: UIViewController {
                         let alert = UIAlertController(title: "Response", message: self.json["response"].string, preferredStyle: UIAlertControllerStyle.alert)
                         
                         
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: { action in
+                            self.code.shake()
+                            self.code.text = ""
+                        }))
                         
                         // show the alert
                         self.present(alert, animated: true, completion: nil)
                     }
+                    self.loadingBar.hide()
                 }
                 break
             case .failure(let error):

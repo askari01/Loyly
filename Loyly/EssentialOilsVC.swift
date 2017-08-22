@@ -39,7 +39,7 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
     }
     
     func parseOilCSV() {
-        let path = Bundle.main.path(forResource: "oils_data", ofType: "csv")!
+        let path = Bundle.main.path(forResource: "oils", ofType: "csv")!
         
         do {
             let csv = try CSV(contentsOfURL: path)

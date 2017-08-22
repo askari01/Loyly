@@ -12,10 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let pref = UserDefaults()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let id = pref.value(forKey: "id") {
+            if String(describing: id) != "" {
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "mainViewController") as! ViewController
+                self.window?.rootViewController = newViewController
+                self.window?.makeKeyAndVisible()
+            }
+            
+        }
+        
         return true
     }
 

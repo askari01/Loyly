@@ -10,27 +10,70 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Foundation
+import GradientLoadingBar
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
     var json: JSON!
+    let pref = UserDefaults()
+    
+    let loadingBar = GradientLoadingBar(
+        height: 3.0,
+        durations: Durations(fadeIn: 1.0, fadeOut: 2.0, progress: 3.0),
+        gradientColors: [
+            UIColor(hexString:"#4cd964").cgColor,
+            UIColor(hexString:"#ff2d55").cgColor
+        ]
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        email.delegate = self
+//        password.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
     }
 
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.view.endEditing(true)
+        return true;
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func loginAction(_ sender: UIButton) {
         if email.text != "" && password.text != "" {
+            loadingBar.show()
             var check = login(user: email.text!, pass: password.text!)
             if check {
                 performSegue(withIdentifier: "loggedIn", sender: self)
             } else {
-                email.shake()
-                email.text = ""
-                password.shake()
-                password.text = ""
+//                email.shake()
+//                email.text = ""
+//                password.shake()
+//                password.text = ""
             }
         }
     }
@@ -60,17 +103,26 @@ class SignInVC: UIViewController {
                         print("1: \(self.json)")
                     print( "2: \(self.json["response"])")
                     if self.json["response"] != "Authentication Failed" {
+                        var id = self.json["response"]["id"].string!
+                        print (id)
+                        self.pref.set("\(id)", forKey: "id")
                         self.performSegue(withIdentifier: "loggedIn", sender: self)
                     } else {
                         // create the alert
                         let alert = UIAlertController(title: "Response", message: self.json["response"].string, preferredStyle: UIAlertControllerStyle.alert)
 
-
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: {
+                            action in
+                            self.email.shake()
+                            self.email.text = ""
+                            self.password.shake()
+                            self.password.text = ""
+                        }))
 
                         // show the alert
                         self.present(alert, animated: true, completion: nil)
                     }
+                    self.loadingBar.hide()
                 }
                 break
             case .failure(let error):

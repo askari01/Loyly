@@ -8,4 +8,6 @@ target 'Loyly' do
   # Pods for Loyly
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
+  pod 'GradientLoadingBar', '~> 1.0'
+  pod 'IQKeyboardManagerSwift', '4.0.10’
 end

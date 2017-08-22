@@ -19,6 +19,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     var json: JSON!
     var my:Int = 0
     var tag: String = "All"
+    let pref = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,9 +112,12 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func getData() {
-        var url: String = ""
+        var url: String = "http://swatshawls.com/loyly/Apis/getdata"
         if my == 1 {
-            url = "http://swatshawls.com/loyly/Apis/getdata/1"
+            if let id = pref.value(forKey: "id"){
+            print (id)
+                url = "http://swatshawls.com/loyly/Apis/getdata/\(id)"
+            }
         } else if my == 0 && tag == "All" {
             url = "http://swatshawls.com/loyly/Apis/getdata"
         } else if my == 0 && tag == "Classic" {

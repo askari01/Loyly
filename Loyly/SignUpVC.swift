@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import GradientLoadingBar
+
 
 class SignUpVC: UIViewController {
     @IBOutlet weak var email: UITextField!
@@ -17,6 +19,14 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var password2: UITextField!
     
     var json: JSON!
+    let loadingBar = GradientLoadingBar(
+        height: 3.0,
+        durations: Durations(fadeIn: 1.0, fadeOut: 2.0, progress: 3.0),
+        gradientColors: [
+            UIColor(hexString:"#4cd964").cgColor,
+            UIColor(hexString:"#ff2d55").cgColor
+        ]
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +36,19 @@ class SignUpVC: UIViewController {
 
     @IBAction func signUpAction(_ sender: UIButton) {
         if email.text != "" && name.text != "" && password1.text != "" && password2.text != "" && password1.text == password2.text {
+            loadingBar.show()
             var check = signUp(name: name.text!, user: email.text!, pass: password1.text!)
             if check {
                 performSegue(withIdentifier: "SignIn", sender: self)
             } else {
-                email.shake()
-                email.text = ""
-                name.shake()
-                name.text = ""
-                password1.shake()
-                password1.text = ""
-                password2.shake()
-                password2.text = ""
+//                email.shake()
+//                email.text = ""
+//                name.shake()
+//                name.text = ""
+//                password1.shake()
+//                password1.text = ""
+//                password2.shake()
+//                password2.text = ""
             }
         }
     }
@@ -71,11 +82,21 @@ class SignUpVC: UIViewController {
                         let alert = UIAlertController(title: "Response", message: "Not Successful", preferredStyle: UIAlertControllerStyle.alert)
                         
                         
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: {action in
+                            self.email.shake()
+                            self.email.text = ""
+                            self.name.shake()
+                            self.name.text = ""
+                            self.password1.shake()
+                            self.password1.text = ""
+                            self.password2.shake()
+                            self.password2.text = ""
+                        }))
                         
                         // show the alert
                         self.present(alert, animated: true, completion: nil)
                     }
+                    self.loadingBar.hide()
                 }
                 break
             case .failure(let error):

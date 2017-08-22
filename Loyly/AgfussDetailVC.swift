@@ -22,6 +22,9 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     var ing = [String]()
     var ingCount: Int = 0
     
+    var ins = [String]()
+    var insCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +44,13 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             ing.append(char)
             print (char)
         }
+        
+        let characters1 = agfuss.steps.components(separatedBy: ",")
+        insCount = characters1.count
+        for char in characters1 {
+            ins.append(char)
+            print (char)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,12 +61,19 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == ingredient {
             return ingCount
+        } else if tableView == instruction {
+            return insCount
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ing", for: indexPath)
+        var cell: UITableViewCell!
+        if tableView == ingredient {
+            cell = tableView.dequeueReusableCell(withIdentifier: "ing", for: indexPath)
+        } else if tableView == instruction {
+            cell = tableView.dequeueReusableCell(withIdentifier: "ins", for: indexPath)
+        }
         cell.textLabel?.text = ing[indexPath.row]
         return cell
     }
