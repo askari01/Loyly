@@ -195,6 +195,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="Uae-FL-zo1" id="8FC-6N-Ga2"/>
+                        <outlet property="imageView" destination="kHJ-3W-p0C" id="bPF-B0-N1k"/>
                         <outlet property="password" destination="nX4-FC-ZKE" id="fne-o4-aPj"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="loggedIn" id="T1U-3K-Gxp"/>
                     </connections>
@@ -360,6 +361,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="Qpj-QW-XNJ" id="PwQ-he-CRQ"/>
+                        <outlet property="imageView" destination="6Df-rv-Nch" id="FTe-mX-r8U"/>
                         <outlet property="name" destination="hsc-MU-yIB" id="5HQ-QF-ruf"/>
                         <outlet property="password1" destination="nOf-kf-feK" id="WtT-pN-bwh"/>
                         <outlet property="password2" destination="Gmg-Az-dFh" id="VPi-ey-K2k"/>
@@ -1962,6 +1964,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="VVq-U3-5HZ" id="P7x-jA-Wbe"/>
                         <outlet property="password1" destination="TWf-A7-Idq" id="6ug-wH-Pbx"/>
                         <outlet property="password2" destination="GfZ-y2-Ima" id="a0v-0o-Cyi"/>
                         <segue destination="Jfh-IP-yli" kind="show" identifier="SignIn" id="q5K-vv-fRQ"/>
@@ -1996,7 +1999,7 @@
         <image name="srchbtn" width="607" height="283"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q5K-vv-fRQ"/>
+        <segue reference="idt-Ti-bGl"/>
         <segue reference="DWz-ZS-0pR"/>
     </inferredMetricsTieBreakers>
 </document>

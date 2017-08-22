@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Loyly/SignInVC.swift"
-            timestampString = "525096041.309434"
+            timestampString = "525098858.737783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "login(user:pass:)"
             landmarkType = "7">
          </BreakpointContent>
