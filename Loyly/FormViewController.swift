@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import GradientLoadingBar
 
 class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldDelegate, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var stackView: UIStackView!
@@ -86,6 +88,19 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
     
     // Tags Hadler
     var tag: String = "Classic"
+    
+    // JSON Response
+    var json: JSON!
+    
+    // Loading Bar
+    let loadingBar = GradientLoadingBar(
+        height: 3.0,
+        durations: Durations(fadeIn: 1.0, fadeOut: 2.0, progress: 3.0),
+        gradientColors: [
+            UIColor(hexString:"#4cd964").cgColor,
+            UIColor(hexString:"#ff2d55").cgColor
+        ]
+    )
     
     var stepCollection = [CellV?](repeating: CellV(), count: 64)
     var stepCollections = [CellV]()
@@ -376,7 +391,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
             ingredient.append(allData.text.text!)
             i = i+1
         }
-        print (ingredient)
+        print ("Ingred: \(ingredient)")
         
 //        instruction = instructionField.text!
 //        for allData in instructionCollections {
@@ -387,26 +402,39 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         var j = 2
 //        step?.append(String(describing: j))
 //        j = j + 1
-        step = step + stepField.text!
-        for allData in stepCollections {
+        step = step + instructionField.text!
+        for allData in instructionCollections {
             step.append("*")
             step.append(String(describing: j))
             step.append(allData.text.text!)
             j = j + 1
         }
         
-        print (step)
+        print ("STEPS: \(step)")
         print (tag)
         print (titleField.text!)
         print (timeField.text!)
         
         // time to call api
-        saveToServer()
+        if titleField.text != "" && timeField.text != "" && instructionField.text != "" && ingredientField.text != "" {
+            saveToServer()
+        } else {
+            let alert = UIAlertController(title: "Response", message: "Incomplete Data, Enter Data in all fields above", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: {
+                action in
+            }))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func saveToServer() -> String {
         
-        let name = timeField.text!
+        loadingBar.show()
+        
+        let name = titleField.text!
         let dataName = name.data(using: .utf8)!
         
         let tags = tag
@@ -420,14 +448,23 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         
         let steps = step
         let dataSteps = steps.data(using: .utf8)!
+        let pref = UserDefaults()
+        let currentDateTime = String (describing: Date())
+        let id = pref.value(forKey: "id")!
+        print ("ID: \(id)")
+        let ID1 = String(describing: id)
+        print ("ID1: \(ID1)")
+        let ID2 = ID1.data(using: .utf8)!
+        print ("ID2: \(ID2)")
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-                multipartFormData.append(UIImageJPEGRepresentation(self.image.image!, 1)!, withName: "picture", fileName: "hi.jpeg", mimeType: "image/jpeg")
+                multipartFormData.append(UIImageJPEGRepresentation(self.image.image!, 1)!, withName: "picture", fileName: "\(currentDateTime).jpeg", mimeType: "image/jpeg")
                 multipartFormData.append(dataName, withName: "title")
                 multipartFormData.append(dataTags, withName: "tags")
                 multipartFormData.append(dataTime, withName: "time")
                 multipartFormData.append(dataIngredients, withName: "ingredients")
+                multipartFormData.append(ID2, withName: "userid")
                 multipartFormData.append(dataSteps, withName: "steps")
         },
             to: "http://swatshawls.com/loyly/Apis/savedata",
@@ -436,12 +473,26 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
                 case .success(let upload, _, _):
                     upload.responseString { response in
                         debugPrint(response)
+                        if let json = response.result.value {
+                            print("JSON: \(json)") // serialized json response
+                            self.json = JSON(response.result.value)
+                            print (self.json)
+                        }
+                        let alert = UIAlertController(title: "Response", message: "Agfuss is added and is now waiting for approval, please wait for approval...", preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: {
+                            action in
+                            self.performSegue(withIdentifier: "agfussAdded", sender: self)
+                        }))
+                        
+                        // show the alert
+                        self.present(alert, animated: true, completion: nil)
                     }
                 case .failure(let encodingError):
                     print(encodingError)
                 }
         })
-        
+        loadingBar.hide()
         return "success"
     }
     

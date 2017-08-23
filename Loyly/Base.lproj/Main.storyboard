@@ -622,7 +622,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="234" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7et-jf-2bD">
-                                <rect key="frame" x="16" y="148" width="288" height="412"/>
+                                <rect key="frame" x="16" y="104" width="288" height="456"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="agfussCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="234" id="FS3-0f-L2I" customClass="AgfussCell" customModule="Loyly" customModuleProvider="target">
@@ -693,7 +693,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H7p-wo-3bL">
-                                <rect key="frame" x="100" y="72" width="120" height="29"/>
+                                <rect key="frame" x="100" y="28" width="120" height="29"/>
                                 <segments>
                                     <segment title="ALL"/>
                                     <segment title="MY"/>
@@ -703,7 +703,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="5" translatesAutoresizingMaskIntoConstraints="NO" id="WQ8-Pd-Pbx">
-                                <rect key="frame" x="16" y="112" width="288" height="29"/>
+                                <rect key="frame" x="16" y="68" width="288" height="29"/>
                                 <segments>
                                     <segment title="Classic"/>
                                     <segment title="Modern"/>
@@ -761,7 +761,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7T-CB-pjo">
-                                <rect key="frame" x="0.0" y="64" width="320" height="936"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="980"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alpepine" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-C7-Ba0">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
@@ -947,7 +947,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW8-Bf-W2x">
-                                <rect key="frame" x="0.0" y="72" width="340" height="1027"/>
+                                <rect key="frame" x="0.0" y="28" width="340" height="1071"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilX-lx-Fm6">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="1100"/>
@@ -1494,6 +1494,7 @@
                         <outlet property="titleSection" destination="s25-HW-GqU" id="msE-7j-nsp"/>
                         <outlet property="titleView" destination="bME-Th-tIz" id="9zR-Hv-GEq"/>
                         <outlet property="viewMain" destination="cla-fh-vK0" id="lhN-4R-ay5"/>
+                        <segue destination="Ahe-WG-W2h" kind="show" identifier="agfussAdded" id="ltS-Cd-47o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCY-PP-d6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2001,5 +2002,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="idt-Ti-bGl"/>
         <segue reference="DWz-ZS-0pR"/>
+        <segue reference="ltS-Cd-47o"/>
     </inferredMetricsTieBreakers>
 </document>

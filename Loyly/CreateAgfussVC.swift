@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import GradientLoadingBar
 
 class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -22,6 +23,15 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     var tag: String = "All"
     let pref = UserDefaults()
     var image = [UIImage]()
+    
+    let loadingBar = GradientLoadingBar(
+        height: 3.0,
+        durations: Durations(fadeIn: 1.0, fadeOut: 2.0, progress: 3.0),
+        gradientColors: [
+            UIColor(hexString:"#4cd964").cgColor,
+            UIColor(hexString:"#ff2d55").cgColor
+        ]
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +132,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func getData() {
+        loadingBar.show()
         var url: String = "http://swatshawls.com/loyly/Apis/getdata"
         if my == 1 {
             if let id = pref.value(forKey: "id"){
@@ -174,8 +185,8 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 let agfuss = Agfuss(title: title, tag: tag, time: time, ingredients: ingredient, steps: step, picture: url!)
                 self.agfusses.append(agfuss)
             }
-            
         }
+        loadingBar.hide()
     }
 
     /*
