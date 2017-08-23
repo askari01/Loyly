@@ -189,7 +189,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 var time = String(describing: self.json["data"][Int(row.0)!]["time"])
                 var id = String(describing: self.json["data"][Int(row.0)!]["id"])
                 var ingredient = String(describing: self.json["data"][Int(row.0)!]["ingredient"])
-                var step = String(describing: self.json["data"][Int(row.0)!]["step"])
+                var step = String(describing: self.json["data"][Int(row.0)!]["steps"])
                 var img = String(describing: self.json["data"][Int(row.0)!]["pic_renamed"])
                 let url = URL(string: "http:swatshawls.com/loyly/assets/uploads/\(img)")
                 

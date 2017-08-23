@@ -39,14 +39,14 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         name.text = agfuss.title
         tag.text = agfuss.tag
         time.text = agfuss.time
-        let characters = agfuss.ingredients.components(separatedBy: "|")
+        let characters = agfuss.ingredients.components(separatedBy: ",")
         ingCount = characters.count
         for char in characters {
             ing.append(char)
             print (char)
         }
         
-        let characters1 = agfuss.steps.components(separatedBy: "|")
+        let characters1 = agfuss.steps.components(separatedBy: ",")
         insCount = characters1.count
         for char in characters1 {
             ins.append(char)
@@ -57,6 +57,10 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,6 +80,8 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = tableView.dequeueReusableCell(withIdentifier: "ins", for: indexPath)
         }
         cell.textLabel?.text = ing[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = .byWordWrapping
         return cell
     }
     
