@@ -42,6 +42,7 @@ class AgfussCell: UITableViewCell {
     }
     
     func setValues(title: String, tag: String, time1: String, picture1: URL ) {
+        self.picture1.kf.indicatorType = .activity
         self.picture1.kf.setImage(with: picture1)
         self.title1.text = title.capitalized
         self.tag1.text = tag

@@ -65,8 +65,10 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == ingredient {
+            print ("ING: \(ingCount)")
             return ingCount
         } else if tableView == instruction {
+            print ("INS: \(insCount)")
             return insCount
         }
         return 0
@@ -76,10 +78,11 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         var cell: UITableViewCell!
         if tableView == ingredient {
             cell = tableView.dequeueReusableCell(withIdentifier: "ing", for: indexPath)
+            cell.textLabel?.text = ing[indexPath.row]
         } else if tableView == instruction {
             cell = tableView.dequeueReusableCell(withIdentifier: "ins", for: indexPath)
+            cell.textLabel?.text = ins[indexPath.row]
         }
-        cell.textLabel?.text = ing[indexPath.row]
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = .byWordWrapping
         return cell
