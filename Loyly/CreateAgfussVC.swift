@@ -50,7 +50,20 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // table view
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if count > 0 {
+            return 1
+        } else {
+            var messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
+            messageLabel.text = "No data is currently available."
+            messageLabel.textColor = UIColor.black
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
+            messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+            messageLabel.sizeToFit()
+            tableView.backgroundView = messageLabel
+            tableView.separatorStyle = .none
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

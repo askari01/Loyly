@@ -39,14 +39,14 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         name.text = agfuss.title
         tag.text = agfuss.tag
         time.text = agfuss.time
-        let characters = agfuss.ingredients.components(separatedBy: ",")
+        let characters = agfuss.ingredients.components(separatedBy: "|")
         ingCount = characters.count
         for char in characters {
             ing.append(char)
             print (char)
         }
         
-        let characters1 = agfuss.steps.components(separatedBy: ",")
+        let characters1 = agfuss.steps.components(separatedBy: "|")
         insCount = characters1.count
         for char in characters1 {
             ins.append(char)

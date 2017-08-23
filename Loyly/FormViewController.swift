@@ -386,7 +386,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         ingredient = ingredient + ingredientField.text!
         
         for allData in ingredientCollections {
-            step.append("*")
+            step.append("|")
             ingredient.append(String(describing: i))
             ingredient.append(allData.text.text!)
             i = i+1
@@ -404,7 +404,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
 //        j = j + 1
         step = step + instructionField.text!
         for allData in instructionCollections {
-            step.append("*")
+            step.append("|")
             step.append(String(describing: j))
             step.append(allData.text.text!)
             j = j + 1
