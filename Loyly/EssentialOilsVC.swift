@@ -69,7 +69,7 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
     }
     
     func parseOilCSV() {
-        let path = Bundle.main.path(forResource: "oils", ofType: "csv")!
+        let path = Bundle.main.path(forResource: "oilNew", ofType: "csv")!
         
         do {
             let csv = try CSV(contentsOfURL: path)
@@ -80,15 +80,31 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
             
             for row in rows {
                 let oilNameOil = row["name"]!
+                let otherLanguagesOil = row["Otherlanguages"]!
                 let botanicalNameOil = row["botanicalName"]!
                 let plantFamilyOil = row["plantFamily"]!
                 let originOil = row["origin"]!
+                let partOfPlantOil = row["partOfPlant"]!
+                let extractionMethodOil = row["extractionmethod"]!
+                let aromaticMoleculesOil = row["Aromatic molecules"]!
                 let noteOil = row["note"]!
-                let effectOil = "Dummy"
+                let fragranceGroupOil = row["fragrancegroup"]!
+                let fragranceOil = row["Fragrance"]!
+                let chakraOil = row["Chakra"]!
+                let colourOil = row["Color"]!
+                let elementOil = row["Element"]!
+                let plantInfoOil = row["plantInfo"]!
+                let generalPropertiseOil = row["General proporties"]!
+                let propertiseBodyOil = row["Proporties body"]!
+                let propertiseMindOil = row["Proporties mind"]!
+                let propertiseSkinOil = row["Proporties skin"]!
+                let harmonizesWithOil = row["HarmonizesWith"]!
+                let didYouKnowOil = row["Did you know?"]!
+                let contraOil = row["CONTRAINDICATIONS"]!
                 let strengthOil = row["strength"]!
-                let fragranceOil = "Dummy1"
                 
-                let oil = Oils(name: oilNameOil, botanicalName: botanicalNameOil, plantFamily: plantFamilyOil, origin: originOil, note: noteOil, effect: effectOil, strength: strengthOil, fragrance: fragranceOil)
+                
+                let oil = Oils(name: oilNameOil, otherLanguages: otherLanguagesOil, botanicalName: botanicalNameOil, plantFamily: plantFamilyOil, partOfPlant: partOfPlantOil, extractionmethod: extractionMethodOil, aromaticMolecules: aromaticMoleculesOil, origin: originOil, note: noteOil, fragranceGroup: fragranceGroupOil, fragrance: fragranceOil, chakra: chakraOil, colour: colourOil, element: elementOil, plantInfo: plantInfoOil, generalPropertise: generalPropertiseOil, propertiseMind: propertiseMindOil, propertiseBody: propertiseBodyOil, propertiseSkin: propertiseSkinOil, harmonizesWith: harmonizesWithOil, didYouKnow: didYouKnowOil, contra: contraOil, strength: strengthOil)
                 oils.append(oil)
             }
             

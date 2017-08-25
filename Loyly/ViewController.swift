@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import CoreData
-import SQLite
+//import CoreData
+//import SQLite
 
 class ViewController: UIViewController {
 
@@ -18,11 +18,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // testing data
-        let path = Bundle.main.path(forResource: "oilNew", ofType: "csv")
-        let start = DispatchTime.now()
+//        let path = Bundle.main.path(forResource: "oilNew", ofType: "csv")
+//        let start = DispatchTime.now()
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
         
 //        do {
 //            let csv = try CSV(contentsOfURL: path!)
@@ -34,70 +34,31 @@ class ViewController: UIViewController {
 ////                print ("column: \(column)")
 ////            }
 //
-//            print ("*******************")
-//            print ("###################")
-//            print ("///////////////////")
-//            print ("&&&&&&&&&&&&&&&&&&&")
 //            print (rows.count)
 //            for row in rows {
-//                print ("*******************")
 //                print ("row: \(row["name"]!)")
-//                print ("&&&&&&&&&&&&&&&&&&&")
 //                print ("row: \(row["Otherlanguages"]!)")
-//                print ("###################")
 //                print ("row: \(row["botanicalName"]!)")
-//                print ("///////////////////")
-//                print ("*******************")
 //                print ("row: \(row["plantFamily"]!)")
-//                print ("&&&&&&&&&&&&&&&&&&&")
 //                print ("row: \(row["origin"]!)")
-//                print ("###################")
 //                print ("row: \(row["partOfPlant"]!)")
-//                print ("///////////////////")
-//                print ("*******************")
 //                print ("row: \(row["extractionmethod"]!)")
-//                print ("&&&&&&&&&&&&&&&&&&&")
 //                print ("row: \(row["Aromatic molecules"]!)")
-//                print ("###################")
 //                print ("row: \(row["note"]!)")
-//                print ("///////////////////")
-//                print ("*******************")
 //                print ("row: \(row["strength"]!)")
-//                print ("&&&&&&&&&&&&&&&&&&&")
 //                print ("row: \(row["fragrancegroup"]!)")
-//                print ("###################")
 //                print ("row: \(row["Fragrance"]!)")
-//                print ("///////////////////")
-//                print ("*******************")
 //                print ("row: \(row["Chakra"]!)")
-//                print ("&&&&&&&&&&&&&&&&&&&")
 //                print ("row: \(row["Color"]!)")
-//                print ("###################")
 //                print ("row: \(row["Element"]!)")
-//                print ("///////////////////")
-//                print ("*******************")
 //                print ("row: \(row["plantInfo"]!)")
-//                print ("&&&&&&&&&&&&&&&&&&&")
 //                print ("row: \(row["General proporties"]!)")
-//                print ("###################")
 //                print ("row: \(row["Proporties body"]!)")
-//                print ("///////////////////")
-//                print ("*******************")
 //                print ("row: \(row["Proporties mind"]!)")
-//                print ("&&&&&&&&&&&&&&&&&&&")
 //                print ("row: \(row["Proporties skin"]!)")
-//                print ("###################")
 //                print ("row: \(row["HarmonizesWith"]!)")
-//                print ("///////////////////")
-//                print ("*******************")
 //                print ("row: \(row["Did you know?"]!)")
-//                print ("&&&&&&&&&&&&&&&&&&&")
 //                print ("row: \(row["CONTRAINDICATIONS"]!)")
-//                print ("###################")
-//                print ("///////////////////")
-//
-//        // SQL Saving
-////                DBUtil.sharedInstance.addOil(name: row["name"]! , otherLanguages: row["Otherlanguages"]! , botanicalName: row["botanicalName"]! , plantFamily: row["plantFamily"]! , origin: row["origin"]! , partOfPlant: row["partOfPlant"]! , extractionMethod: row["extractionmethod"]! , aromaticMolecules: row["Aromatic molecules"]! , note: row["note"]! , strength: row["strength"]! , fragranceGroup: row["fragrancegroup"]! , fragrance: row["Fragrance"]! , chakra: row["Chakra"]! , color: row["Color"]! , element: row["Element"]! , plantInfo: row["plantInfo"]! , generalProporties: row["General proporties"]! , proportiesBody: row["Proporties body"]! , proportiesMind: row["Proporties mind"]! , proportiesSkin: row["Proporties skin"]! , harmonizesWith: row["HarmonizesWith"]! , didYouKnow: row["Did you know?"]! , contraindications: row["CONTRAINDICATIONS"]! )
 //
 //                // Core Saving
 ////                let oils = NSEntityDescription.insertNewObject(forEntityName: "OilsEntity", into: context)
@@ -225,18 +186,18 @@ class ViewController: UIViewController {
 //            print ("Error with CoreData")
 //        }
         
-        // sql Viewing
-        DBUtil.sharedInstance.getAll()
+//        // SQL Saving
+////                DBUtil.sharedInstance.addOil(name: row["name"]! , otherLanguages: row["Otherlanguages"]! , botanicalName: row["botanicalName"]! , plantFamily: row["plantFamily"]! , origin: row["origin"]! , partOfPlant: row["partOfPlant"]! , extractionMethod: row["extractionmethod"]! , aromaticMolecules: row["Aromatic molecules"]! , note: row["note"]! , strength: row["strength"]! , fragranceGroup: row["fragrancegroup"]! , fragrance: row["Fragrance"]! , chakra: row["Chakra"]! , color: row["Color"]! , element: row["Element"]! , plantInfo: row["plantInfo"]! , generalProporties: row["General proporties"]! , proportiesBody: row["Proporties body"]! , proportiesMind: row["Proporties mind"]! , proportiesSkin: row["Proporties skin"]! , harmonizesWith: row["HarmonizesWith"]! , didYouKnow: row["Did you know?"]! , contraindications: row["CONTRAINDICATIONS"]! )
+
         
-        print ("*******************")
-        print ("###################")
-        print ("///////////////////")
-        print ("&&&&&&&&&&&&&&&&&&&")
-        let end = DispatchTime.now()   // <<<<<<<<<<   end time
-        let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds // <<<<< Difference in nano seconds (UInt64)
-        let timeInterval = Double(nanoTime) / 1_000_000_000 // Technically could overflow for long running tests
+//        // sql Viewing
+//        DBUtil.sharedInstance.getAll()
         
-        print("Time to evaluate : \(timeInterval) seconds")
+//        let end = DispatchTime.now()   // <<<<<<<<<<   end time
+//        let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds // <<<<< Difference in nano seconds (UInt64)
+//        let timeInterval = Double(nanoTime) / 1_000_000_000 // Technically could overflow for long running tests
+//
+//        print("Time to evaluate : \(timeInterval) seconds")
     }
 
     override func didReceiveMemoryWarning() {

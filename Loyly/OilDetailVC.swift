@@ -20,6 +20,23 @@ class OilDetailVC: UIViewController {
     @IBOutlet weak var noteOil: UILabel!
     @IBOutlet weak var fragranceGroup: UILabel!
     @IBOutlet weak var extractionMethod: UILabel!
+    @IBOutlet weak var partOfPlant: UILabel!
+    @IBOutlet weak var plantInfo: UITextView!
+    @IBOutlet weak var generalPropretise: UILabel!
+    @IBOutlet weak var propertiseBody: UILabel!
+    @IBOutlet weak var propertiseMind: UILabel!
+    @IBOutlet weak var propertiseSkin: UILabel!
+    @IBOutlet weak var fragrance: UILabel!
+    @IBOutlet weak var aromaticMolecule: UILabel!
+    @IBOutlet weak var note: UILabel!
+    @IBOutlet weak var strength: UILabel!
+    @IBOutlet weak var harmonizesWith: UITextView!
+    @IBOutlet weak var chakra: UILabel!
+    @IBOutlet weak var colour: UILabel!
+    @IBOutlet weak var element: UILabel!
+    @IBOutlet weak var didYouKnow: UITextView!
+    @IBOutlet weak var contraindictions: UITextView!
+    @IBOutlet weak var otherlanguages: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +46,24 @@ class OilDetailVC: UIViewController {
         bannerOil.image = UIImage(named: oil.name)
         familyOil.text = oil.plantFamily
         originOil.text = oil.origin
+        extractionMethod.text = oil.extractionmethod
+        plantInfo.text = oil.plantInfo
+        generalPropretise.text = oil.generalPropertise
+        propertiseBody.text = oil.propertiseBody
+        propertiseMind.text = oil.propertiseMind
+        propertiseSkin.text = oil.propertiseSkin
+        fragranceGroup.text = oil.fragrance
+        fragrance.text = oil.fragrance
+        aromaticMolecule.text = oil.aromaticMolecules
         noteOil.text = oil.note
         strengthOil.text = oil.strength
-        fragranceGroup.text = oil.fragrance
+        harmonizesWith.text = oil.harmonizesWith
+        chakra.text = oil.chakra
+        colour.text = oil.colour
+        element.text = oil.element
+        didYouKnow.text = oil.didYouKnow
+        contraindictions.text = oil.contra
+        otherlanguages.text = oil.otherLanguages
     }
 
     override func didReceiveMemoryWarning() {
