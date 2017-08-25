@@ -2,20 +2,35 @@ PODS:
   - Alamofire (4.5.0)
   - GradientLoadingBar (1.1.1)
   - Kingfisher (3.11.0)
+  - SQLite.swift (0.11.3):
+    - SQLite.swift/standard (= 0.11.3)
+  - SQLite.swift/standard (0.11.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - GradientLoadingBar (~> 1.0)
   - Kingfisher (~> 3.11.0)
+  - SQLite.swift (from `https://github.com/stephencelis/SQLite.swift.git`, branch `swift-4`)
   - SwiftyJSON
+
+EXTERNAL SOURCES:
+  SQLite.swift:
+    :branch: swift-4
+    :git: https://github.com/stephencelis/SQLite.swift.git
+
+CHECKOUT OPTIONS:
+  SQLite.swift:
+    :commit: 25779fa161e4805dd3abd3df5bb4f30d22e666f5
+    :git: https://github.com/stephencelis/SQLite.swift.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   GradientLoadingBar: ee247760b6b24a922584b724749a1d48bcc0d905
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
+  SQLite.swift: f5e183af7f267169a3e71cefc7c0a72e687c52a7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2510ff37ab9f37c8544918b7639a50ea83e04b5f
+PODFILE CHECKSUM: b623a318a3cc54bb321a427aace28ceaa069a1b9
 
 COCOAPODS: 1.2.1

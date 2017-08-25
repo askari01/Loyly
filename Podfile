@@ -10,4 +10,5 @@ target 'Loyly' do
   pod 'SwiftyJSON'
   pod 'GradientLoadingBar', '~> 1.0'
   pod 'Kingfisher', '~> 3.11.0’
+  pod 'SQLite.swift', :git => ’https://github.com/stephencelis/SQLite.swift.git’ , :branch => ‘swift-4’
 end

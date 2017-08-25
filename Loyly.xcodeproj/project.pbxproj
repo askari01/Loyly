@@ -17,8 +17,10 @@
 		36332A3E1F122F7700416442 /* OilDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36332A3D1F122F7700416442 /* OilDetailVC.swift */; };
 		3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C01F12005500B7B8E2 /* Oils.swift */; };
 		3661B6C41F120B6600B7B8E2 /* OilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3661B6C31F120B6600B7B8E2 /* OilCell.swift */; };
+		366D1D831F504BC90013A242 /* DBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D1D821F504BC90013A242 /* DBUtil.swift */; };
 		366F7A071F12115C00117B32 /* oils.csv in Resources */ = {isa = PBXBuildFile; fileRef = 366F7A061F12115C00117B32 /* oils.csv */; };
 		366F7A0A1F12123900117B32 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F7A091F12123900117B32 /* csv.swift */; };
+		3679867A1F503D80003904D7 /* oilModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 367986781F503D80003904D7 /* oilModel.xcdatamodeld */; };
 		3688A3B91F4440B4002A94D4 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3688A3B81F4440B4002A94D4 /* SignInVC.swift */; };
 		3688A3BB1F4440DC002A94D4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3688A3BA1F4440DC002A94D4 /* SignUpVC.swift */; };
 		3688A3BD1F44411F002A94D4 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3688A3BC1F44411F002A94D4 /* ForgetPasswordVC.swift */; };
@@ -39,10 +41,8 @@
 		36C2099F1F14EE7E004F55F8 /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C2099E1F14EE7E004F55F8 /* ChartVC.swift */; };
 		36C209A11F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 36C209A01F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf */; };
 		36C209A31F14F682004F55F8 /* eo_instruction_a3_en-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */; };
-		36C345FE1F22630A00247457 /* Apis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C345FD1F22630A00247457 /* Apis.swift */; };
 		36C346021F22635300247457 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C346011F22635300247457 /* GetData.swift */; };
-		36E7E1461F3F5B940020F6A7 /* oils_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36E7E1451F3F5B940020F6A7 /* oils_data.csv */; };
-		36EE5C631F0F7D67002809BA /* Oils.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5C611F0F7D67002809BA /* Oils.xcdatamodeld */; };
+		36CA89DA1F5032070092C80D /* oilNew.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36CA89D91F5032070092C80D /* oilNew.csv */; };
 		36EE5C651F0F9297002809BA /* oils.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36EE5C641F0F9297002809BA /* oils.strings */; };
 		36F36FA51F42DB72008E3F9B /* AgfussDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */; };
 		73592FC28059D717634DE2FB /* Pods_Loyly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */; };
@@ -60,8 +60,10 @@
 		36332A3D1F122F7700416442 /* OilDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilDetailVC.swift; sourceTree = "<group>"; };
 		3661B6C01F12005500B7B8E2 /* Oils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oils.swift; sourceTree = "<group>"; };
 		3661B6C31F120B6600B7B8E2 /* OilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCell.swift; sourceTree = "<group>"; };
+		366D1D821F504BC90013A242 /* DBUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUtil.swift; sourceTree = "<group>"; };
 		366F7A061F12115C00117B32 /* oils.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oils.csv; sourceTree = "<group>"; };
 		366F7A091F12123900117B32 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		367986791F503D80003904D7 /* oilModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = oilModel.xcdatamodel; sourceTree = "<group>"; };
 		3688A3B81F4440B4002A94D4 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		3688A3BA1F4440DC002A94D4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		3688A3BC1F44411F002A94D4 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
@@ -84,10 +86,8 @@
 		36C2099E1F14EE7E004F55F8 /* ChartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
 		36C209A01F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "harmonized_blending_a3_en-min.pdf"; sourceTree = "<group>"; };
 		36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "eo_instruction_a3_en-min.pdf"; sourceTree = "<group>"; };
-		36C345FD1F22630A00247457 /* Apis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apis.swift; sourceTree = "<group>"; };
 		36C346011F22635300247457 /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
-		36E7E1451F3F5B940020F6A7 /* oils_data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oils_data.csv; sourceTree = "<group>"; };
-		36EE5C621F0F7D67002809BA /* Oils.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Oils.xcdatamodel; sourceTree = "<group>"; };
+		36CA89D91F5032070092C80D /* oilNew.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = oilNew.csv; path = ../../../Downloads/oilNew.csv; sourceTree = "<group>"; };
 		36EE5C641F0F9297002809BA /* oils.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = oils.strings; path = ../oils.strings; sourceTree = "<group>"; };
 		36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgfussDetailVC.swift; sourceTree = "<group>"; };
 		3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loyly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +150,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		366D1D811F504BB40013A242 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				366D1D821F504BC90013A242 /* DBUtil.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		366F7A051F120F5300117B32 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,8 +165,7 @@
 				36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */,
 				360FDAB81F161CCE00E7FF9B /* caution_a3-min.pdf */,
 				366F7A061F12115C00117B32 /* oils.csv */,
-				36E7E1451F3F5B940020F6A7 /* oils_data.csv */,
-				36C345FD1F22630A00247457 /* Apis.swift */,
+				36CA89D91F5032070092C80D /* oilNew.csv */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -192,6 +199,8 @@
 		36B12CF71F0E385B00B2FEB4 /* Loyly */ = {
 			isa = PBXGroup;
 			children = (
+				366D1D811F504BB40013A242 /* Database */,
+				36CA89DB1F503A880092C80D /* CoreData */,
 				3661B6BF1F12003D00B7B8E2 /* Model */,
 				3661B6C21F120B4200B7B8E2 /* View */,
 				3661B6BE1F12002D00B7B8E2 /* Controller */,
@@ -204,7 +213,6 @@
 				36B12CFF1F0E385B00B2FEB4 /* Assets.xcassets */,
 				36B12D011F0E385B00B2FEB4 /* LaunchScreen.storyboard */,
 				36B12D041F0E385B00B2FEB4 /* Info.plist */,
-				36EE5C611F0F7D67002809BA /* Oils.xcdatamodeld */,
 				36EE5C641F0F9297002809BA /* oils.strings */,
 			);
 			path = Loyly;
@@ -216,6 +224,14 @@
 				36C346011F22635300247457 /* GetData.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		36CA89DB1F503A880092C80D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				367986781F503D80003904D7 /* oilModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		3ACE1FEF6804DB464936BE7B /* Pods */ = {
@@ -300,9 +316,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B12D031F0E385B00B2FEB4 /* LaunchScreen.storyboard in Resources */,
-				36E7E1461F3F5B940020F6A7 /* oils_data.csv in Resources */,
 				360FDAB91F161CCE00E7FF9B /* caution_a3-min.pdf in Resources */,
 				36B12D001F0E385B00B2FEB4 /* Assets.xcassets in Resources */,
+				36CA89DA1F5032070092C80D /* oilNew.csv in Resources */,
 				366F7A071F12115C00117B32 /* oils.csv in Resources */,
 				3601D9CC1F2C758900E53372 /* CellV.xib in Resources */,
 				36B12CFE1F0E385B00B2FEB4 /* Main.storyboard in Resources */,
@@ -368,7 +384,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3688A3C11F4441B2002A94D4 /* SetNewPasswordVC.swift in Sources */,
-				36EE5C631F0F7D67002809BA /* Oils.xcdatamodeld in Sources */,
 				36AA83CA1F4E03400023D21F /* EducationCell.swift in Sources */,
 				36BF89CC1F3AE40A009BC64C /* Agfuss.swift in Sources */,
 				366F7A0A1F12123900117B32 /* csv.swift in Sources */,
@@ -384,13 +399,14 @@
 				36AA83CE1F4E08D70023D21F /* EducationDetailVC.swift in Sources */,
 				36C2099D1F14E9CC004F55F8 /* ChartsVC.swift in Sources */,
 				36332A3E1F122F7700416442 /* OilDetailVC.swift in Sources */,
+				3679867A1F503D80003904D7 /* oilModel.xcdatamodeld in Sources */,
 				36F36FA51F42DB72008E3F9B /* AgfussDetailVC.swift in Sources */,
 				3607F4681F4C3E95005E0FEA /* MainViewController.swift in Sources */,
 				3601D9CE1F2C7AB000E53372 /* CellV.swift in Sources */,
-				36C345FE1F22630A00247457 /* Apis.swift in Sources */,
 				36B12D0B1F0E51E700B2FEB4 /* EssentialOilsVC.swift in Sources */,
 				36AA83C81F4E02E90023D21F /* EducationVC.swift in Sources */,
 				3661B6C11F12005500B7B8E2 /* Oils.swift in Sources */,
+				366D1D831F504BC90013A242 /* DBUtil.swift in Sources */,
 				36B12CF91F0E385B00B2FEB4 /* AppDelegate.swift in Sources */,
 				36C2099F1F14EE7E004F55F8 /* ChartVC.swift in Sources */,
 				3688A3BD1F44411F002A94D4 /* ForgetPasswordVC.swift in Sources */,
@@ -586,13 +602,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		36EE5C611F0F7D67002809BA /* Oils.xcdatamodeld */ = {
+		367986781F503D80003904D7 /* oilModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				36EE5C621F0F7D67002809BA /* Oils.xcdatamodel */,
+				367986791F503D80003904D7 /* oilModel.xcdatamodel */,
 			);
-			currentVersion = 36EE5C621F0F7D67002809BA /* Oils.xcdatamodel */;
-			path = Oils.xcdatamodeld;
+			currentVersion = 367986791F503D80003904D7 /* oilModel.xcdatamodel */;
+			path = oilModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

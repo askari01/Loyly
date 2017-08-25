@@ -39,6 +39,9 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        // seperator
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        tableView.separatorColor = UIColor.black
         
         getData()
     }

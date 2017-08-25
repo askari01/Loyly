@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13196.5" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="OilsEntity" representedClassName="OilsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="aromaticMolecules" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="botanicalName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chakra" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contraindications" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="didYouKnow" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="element" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="extractionMethod" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fragrance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fragranceGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="generalProporties" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="harmonizesWith" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="otherLanguages" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partOfPlant" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantFamily" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="proportiesBody" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="proportiesMind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="proportiesSkin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strength" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="OilsEntity" positionX="-63" positionY="-18" width="128" height="390"/>
+    </elements>
+</model>
