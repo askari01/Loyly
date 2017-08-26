@@ -31,6 +31,7 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
         // search bar
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.search
+        searchBar.layer.cornerRadius = 5
         
         parseOilCSV()
     }
@@ -152,7 +153,9 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? OilCell {
-        
+            
+            cell.layer.cornerRadius = 5
+            
             let oil: Oils!
             if inSearchMode {
                 oil = filteredOils[indexPath.row]

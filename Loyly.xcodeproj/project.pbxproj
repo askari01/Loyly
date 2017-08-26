@@ -207,15 +207,23 @@
 				366F7A051F120F5300117B32 /* Resources */,
 				366F7A081F12122300117B32 /* Util */,
 				36C345FC1F2262C900247457 /* Networking */,
+				36B99D091F515E710076784C /* StoryBoard */,
 				36B12CF81F0E385B00B2FEB4 /* AppDelegate.swift */,
-				36B12CFC1F0E385B00B2FEB4 /* Main.storyboard */,
-				3601D9CB1F2C758900E53372 /* CellV.xib */,
 				36B12CFF1F0E385B00B2FEB4 /* Assets.xcassets */,
-				36B12D011F0E385B00B2FEB4 /* LaunchScreen.storyboard */,
 				36B12D041F0E385B00B2FEB4 /* Info.plist */,
 				36EE5C641F0F9297002809BA /* oils.strings */,
 			);
 			path = Loyly;
+			sourceTree = "<group>";
+		};
+		36B99D091F515E710076784C /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				36B12CFC1F0E385B00B2FEB4 /* Main.storyboard */,
+				3601D9CB1F2C758900E53372 /* CellV.xib */,
+				36B12D011F0E385B00B2FEB4 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		36C345FC1F2262C900247457 /* Networking */ = {

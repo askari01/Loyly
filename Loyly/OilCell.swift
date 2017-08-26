@@ -25,6 +25,7 @@ class OilCell: UITableViewCell {
         self.oil = oil
         nameOil.text = self.oil.name.capitalized
         bannerOil.image = UIImage(named: self.oil.name)
+        bannerOil.layer.cornerRadius = 5
         botanicalNameOil.text = self.oil.botanicalName
     }
 }
