@@ -83,20 +83,20 @@ class VerifyCodeVC: UIViewController, UITextFieldDelegate {
             "code": code
         ]
         
-        print(parameters)
+//        print(parameters)
         
         Alamofire.request("http://swatshawls.com/loyly/Users/CheckCode", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil ).responseJSON{ response in
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // URL response
-            print(response.result.value as Any)   // result of response serialization
-            
+//            print(response.request as Any)  // original URL request
+//            print(response.response as Any) // URL response
+//            print(response.result.value as Any)   // result of response serialization
+//
             switch response.result {
             case .success:
-                print("0: \(response)")
+//                print("0: \(response)")
                 if let value = response.result.value {
                     self.json = JSON(value)
-                    print("1: \(self.json)")
-                    print( "2: \(self.json["response"])")
+//                    print("1: \(self.json)")
+//                    print( "2: \(self.json["response"])")
                     if self.json["response"] == "verified" {
                         self.performSegue(withIdentifier: "setNewPassword", sender: self)
                     } else {

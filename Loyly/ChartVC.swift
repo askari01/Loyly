@@ -21,7 +21,7 @@ class ChartVC: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         var res: String?
         var ext: String?
-        print (choice!)
+//        print (choice!)
         switch choice! {
         case "1":
             res = "eo_instruction_a3_en-min"
@@ -37,7 +37,7 @@ class ChartVC: UIViewController, UIWebViewDelegate {
             return
         }
         
-        print (choice! + ext!)
+//        print (choice! + ext!)
         
         if let url = Bundle.main.url(forResource: res!, withExtension: ext!) {
             let request = URLRequest(url: url)

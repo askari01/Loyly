@@ -45,10 +45,12 @@ class EducationVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     // table view
     func numberOfSections(in tableView: UITableView) -> Int {
+        var messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
         if count > 0 {
+            messageLabel.isHidden = true
             return 1
         } else {
-            var messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
+            messageLabel.isHidden = false
             messageLabel.text = "No data is currently available."
             messageLabel.textColor = UIColor.black
             messageLabel.numberOfLines = 0
@@ -66,7 +68,7 @@ class EducationVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //  print(indexPath)
+//        print(indexPath.row)
         var education: Education!
         education = educations[indexPath.row]
         performSegue(withIdentifier: "educationDetails", sender: education)
@@ -76,16 +78,16 @@ class EducationVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EducationCell {
             // print (indexPath.row)
-            var level = String(describing: self.json[indexPath.row]["level"])
-            print ("Level: \(level)")
-            var flanguage = String(describing: self.json[indexPath.row]["flanguage"])
-            print ("flanguage: \(flanguage)")
-            var wearDate = String(describing: self.json[indexPath.row]["wear_date"])
-            print ("wearDate: \(wearDate)")
+            var level = String(describing: self.json["data"][indexPath.row]["level"])
+//            print ("Level: \(level)")
+            var flanguage = String(describing: self.json["data"][indexPath.row]["flanguage"])
+//            print ("flanguage: \(flanguage)")
+            var wearDate = String(describing: self.json["data"][indexPath.row]["wear_date"])
+//            print ("wearDate: \(wearDate)")
             cell.tag = indexPath.row
-            var img = String(describing: self.json[indexPath.row]["picture"])
+            var img = String(describing: self.json["data"][indexPath.row]["picture"])
             let url = URL(string: "http:swatshawls.com/loyly/assets/uploads/\(img)")
-            print ("url: \(url)")
+//            print ("url: \(url)")
             
             cell.setValues(level: level, flanguage: flanguage, wearDate: wearDate, picture1: url!)
             
@@ -117,49 +119,50 @@ class EducationVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         var url: String = "http://swatshawls.com/loyly/Apis/education"
         
         Alamofire.request(url).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
+//            print("Request: \(String(describing: response.request))")   // original url request
+//            print("Response: \(String(describing: response.response))") // http url response
+//            print("Result: \(response.result)")                         // response serialization result
+//
             if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
+//                print("JSON: \(json)") // serialized json response
                 self.json = JSON(response.result.value)
                 self.educations.removeAll()
-                print (self.json[0]["picture"])
+//                print (self.json[0]["picture"]) // printed null
             }
-            self.count = self.json.count
+            self.count = self.json["data"].count
             self.tableView.reloadData()
             
-            print (self.json.count)
+//            print (self.json["data"].count)
             
-            for row in self.json {
-                print ("Image Count: \(self.image.count)")
-                var id = String(describing: self.json[Int(row.0)!]["id"])
-                print ("ID: \(id)")
-                var level = String(describing: self.json[Int(row.0)!]["level"])
-                print ("Level: \(level)")
-                var nextDate = String(describing: self.json[Int(row.0)!]["next_date"])
-                print ("nextDate: \(nextDate)")
-                var flanguage = String(describing: self.json[Int(row.0)!]["flanguage"])
-                print ("flanguage: \(flanguage)")
-                var wearDate = String(describing: self.json[Int(row.0)!]["wear_date"])
-                print ("wearDate: \(wearDate)")
-                var llanguage = String(describing: self.json[Int(row.0)!]["llanguage"])
-                print ("llanguage: \(llanguage)")
-                var description = String(describing: self.json[Int(row.0)!]["description"])
-                print ("description: \(description)")
-                var topic = String(describing: self.json[Int(row.0)!]["topic"])
-                print ("topic: \(topic)")
-                var img = String(describing: self.json[Int(row.0)!]["picture"])
-                print ("img: \(img)")
+            for row in self.json["data"] {
+//                print (row)
+//                print ("Image Count: \(self.image.count)")
+                var id = String(describing: self.json["data"][0]["id"])
+//                print ("ID: \(id)")
+                var level = String(describing: self.json["data"][0]["level"])
+//                print ("Level: \(level)")
+                var nextDate = String(describing: self.json["data"][0]["next_date"])
+//                print ("nextDate: \(nextDate)")
+                var flanguage = String(describing: self.json["data"][0]["flanguage"])
+//                print ("flanguage: \(flanguage)")
+                var wearDate = String(describing: self.json["data"][0]["wear_date"])
+//                print ("wearDate: \(wearDate)")
+                var llanguage = String(describing: self.json["data"][0]["llanguage"])
+//                print ("llanguage: \(llanguage)")
+                var description = String(describing: self.json["data"][0]["description"])
+//                print ("description: \(description)")
+                var topic = String(describing: self.json["data"][0]["topic"])
+//                print ("topic: \(topic)")
+                var img = String(describing: self.json["data"][0]["picture"])
+//                print ("img: \(img)")
                 let url = URL(string: "http:swatshawls.com/loyly/assets/uploads/\(img)")
-                print ("url: \(url)")
+//                print ("url: \(url)")
                 
-                var picture = String(describing: self.json[Int(row.0)!]["picture"])
-                print (picture)
+                var picture = String(describing: self.json["data"][0]["picture"])
+//                print (picture)
                 
                 let education = Education(id: id, level: level, nextDate: nextDate, flanguage: flanguage, wearDate: wearDate, llanguage: llanguage, description: description, topic: topic, picture: url!)
-                print ("EDUCATION: \(education)")
+//                print ("EDUCATION: \(education)")
                 self.educations.append(education)
             }
         }

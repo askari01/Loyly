@@ -77,7 +77,7 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
             let rows = csv.rows
             
             // printing
-            print (rows)
+//            print (rows)
             
             for row in rows {
                 let oilNameOil = row["name"]!
@@ -197,9 +197,9 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
         } else {
             inSearchMode = true
             let lower = searchBar.text!.uppercased()
-            print ("lower: \(lower)")
+//            print ("lower: \(lower)")
             filteredOils = oils.filter({$0.name.range(of: lower) != nil})
-            print ("filtered List: \(oils[0])")
+//            print ("filtered List: \(oils[0])")
             tableView.reloadData()
         }
     }

@@ -152,7 +152,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
         var url: String = "http://swatshawls.com/loyly/Apis/getdata"
         if my == 1 {
             if let id = pref.value(forKey: "id"){
-            print (id)
+//            print (id)
                 url = "http://swatshawls.com/loyly/Apis/getdata/\(id)"
             }
         } else if my == 0 && tag == "All" {
@@ -170,23 +170,23 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         Alamofire.request(url).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
+//            print("Request: \(String(describing: response.request))")   // original url request
+//            print("Response: \(String(describing: response.response))") // http url response
+//            print("Result: \(response.result)")                         // response serialization result
+//
             if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
+//                print("JSON: \(json)") // serialized json response
                 self.json = JSON(response.result.value)
                 self.agfusses.removeAll()
-                print (self.json)
+//                print (self.json)
             }
             self.count = self.json["data"].count
             self.tableView.reloadData()
 
-            print (self.json["data"].count)
+//            print (self.json["data"].count)
             
             for row in self.json["data"] {
-                print ("Image Count: \(self.image.count)")
+//                print ("Image Count: \(self.image.count)")
                 var title = String(describing: self.json["data"][Int(row.0)!]["title"])
                 var tag = String(describing: self.json["data"][Int(row.0)!]["tags"])
                 var time = String(describing: self.json["data"][Int(row.0)!]["time"])
@@ -197,7 +197,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 let url = URL(string: "http:swatshawls.com/loyly/assets/uploads/\(img)")
                 
                 var picture = String(describing: self.json["data"][Int(row.0)!]["picture"])
-                print (id)
+//                print (id)
                 let agfuss = Agfuss(title: title, tag: tag, time: time, ingredients: ingredient, steps: step, picture: url!)
                 self.agfusses.append(agfuss)
             }

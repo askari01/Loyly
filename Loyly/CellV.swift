@@ -66,20 +66,20 @@ class CellV: UIView, UITextFieldDelegate {
     }
     
     @IBAction func ButtonClicked(_ sender: UIButton) {
-        print("button clicked")
+//        print("button clicked")
         var abc = getText()
         text.text = ""
         delegate?.checkIfNextMoveExistsForGameBoardUIView(gameBoardUIView: self, text: abc)
-        print (abc)
+//        print (abc)
     }
     
     // UITextField Delegates
     // UITextField Delegates
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(textField.text!)
+//        print(textField.text!)
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.text!)
+//        print(textField.text!)
         if textField.text == "" {
             view.shake()
             progressBar.isHidden = false
@@ -88,24 +88,24 @@ class CellV: UIView, UITextFieldDelegate {
         }
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print(textField.text!)
+//        print(textField.text!)
         return true;
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        print(textField.text!)
+//        print(textField.text!)
         return true;
     }
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print(textField.text!)
+//        print(textField.text!)
         return true;
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print(textField.text!)
+//        print(textField.text!)
         return true;
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder();
-        print(textField.text!)
+//        print(textField.text!)
         return true;
     }
 }

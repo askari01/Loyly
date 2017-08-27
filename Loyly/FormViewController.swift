@@ -109,7 +109,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print (stackView.arrangedSubviews.count)
+//        print (stackView.arrangedSubviews.count)
         ingredientCollection[ingredientCount]?.delegate = self
         instructionCollection[instructionCount]?.delegate = self
         stepCollection[stepCount]?.delegate = self
@@ -206,11 +206,11 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         let alert = UIAlertController(title: text, message: nil, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {(action: UIAlertAction!) in
-            print("Game Over")
+//            print("Game Over")
             self.ingredient.append("\n")
             self.ingredient.append(String(describing:(self.ingredientCount + 1)))
             self.ingredient.append(text)
-            print(self.ingredient)
+//            print(self.ingredient)
         }))
         
         // If you need to feed back to the game view you can do it in the completion block here
@@ -253,7 +253,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         else {
             ingredientProgress.isHidden = true
             ingredientCount += 1
-            print ("The Count is: \(ingredientCount)")
+//            print ("The Count is: \(ingredientCount)")
             let a = CellV()
             ingredientCollections.insert(a, at: (ingredientCount - 1))
 
@@ -277,7 +277,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
             
             
             if cell != nil {
-                print("tag: \(cell.tag)")
+//                print("tag: \(cell.tag)")
                 stackView.insertArrangedSubview(cell, at: (7 + ingredientCount))
                 
                 // adjusting height of constraints
@@ -325,7 +325,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
             
             
             if cell != nil {
-                print("tag: \(cell.tag)")
+//                print("tag: \(cell.tag)")
                 stackView.insertArrangedSubview(cell, at: (8 + instructionCount + (ingredientCount + 1)))
                 
                 // adjusting height of constraints
@@ -344,7 +344,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         else {
             stepProgress.isHidden = true
             stepCount += 1
-            print ("The Count is: \(stepCount)")
+//            print ("The Count is: \(stepCount)")
             let a = CellV()
             stepCollections.insert(a, at: (stepCount - 1))
             
@@ -368,7 +368,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
             
             
             if cell != nil {
-                print("tag: \(cell.tag)")
+//                print("tag: \(cell.tag)")
                 stackView.insertArrangedSubview(cell, at: (9 + instructionCount + (instructionCount + 1) + (stepCount + 1)))
                 
                 // adjusting height of constraints
@@ -391,7 +391,7 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
             ingredient.append(allData.text.text!)
             i = i+1
         }
-        print ("Ingred: \(ingredient)")
+//        print ("Ingred: \(ingredient)")
         
 //        instruction = instructionField.text!
 //        for allData in instructionCollections {
@@ -410,11 +410,11 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
             j = j + 1
         }
         
-        print ("STEPS: \(step)")
-        print (tag)
-        print (titleField.text!)
-        print (timeField.text!)
-        
+////        print ("STEPS: \(step)")
+//        print (tag)
+//        print (titleField.text!)
+//        print (timeField.text!)
+//
         // time to call api
         if titleField.text != "" && timeField.text != "" && instructionField.text != "" && ingredientField.text != "" {
             saveToServer()
@@ -451,11 +451,11 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         let pref = UserDefaults()
         let currentDateTime = String (describing: Date())
         let id = pref.value(forKey: "id")!
-        print ("ID: \(id)")
+//        print ("ID: \(id)")
         let ID1 = String(describing: id)
-        print ("ID1: \(ID1)")
+//        print ("ID1: \(ID1)")
         let ID2 = ID1.data(using: .utf8)!
-        print ("ID2: \(ID2)")
+//        print ("ID2: \(ID2)")
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
@@ -472,11 +472,11 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseString { response in
-                        debugPrint(response)
+//                        debugPrint(response)
                         if let json = response.result.value {
-                            print("JSON: \(json)") // serialized json response
+//                            print("JSON: \(json)") // serialized json response
                             self.json = JSON(response.result.value)
-                            print (self.json)
+//                            print (self.json)
                         }
                         let alert = UIAlertController(title: "Response", message: "Agfuss is added and is now waiting for approval, please wait for approval...", preferredStyle: UIAlertControllerStyle.alert)
                         

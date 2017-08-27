@@ -17,10 +17,10 @@ public class GetData {
                     print("error")
                 } else {
                     if let usableData = data {
-                        print(usableData) //JSONSerialization
+//                        print(usableData) //JSONSerialization
                         do{
                             let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String : AnyObject]
-                            print (json)
+//                            print (json)
                         }catch let error as NSError{
                             print(error)
                         }

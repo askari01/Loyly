@@ -96,16 +96,16 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
             "password": pass
         ]
         
-        print(parameters)
+//        print(parameters)
         
         Alamofire.request("http://swatshawls.com/loyly/Users/signup", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil ).responseJSON{ response in
             switch response.result {
             case .success:
-                print("0: \(response)")
+//                print("0: \(response)")
                 if let value = response.result.value {
                     self.json = JSON(value)
-                    print("1: \(self.json)")
-                    print( "2: \(self.json["response"])")
+//                    print("1: \(self.json)")
+//                    print( "2: \(self.json["response"])")
                     if self.json["response"] == "User Registered Successfully" {
                         self.performSegue(withIdentifier: "SignIn", sender: self)
                     } else {

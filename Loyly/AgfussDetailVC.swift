@@ -34,7 +34,7 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         instruction.delegate = self
         instruction.dataSource = self
         
-        print(agfuss)
+//        print(agfuss)
         image.kf.setImage(with: agfuss.picture)
         name.text = agfuss.title
         tag.text = agfuss.tag
@@ -43,14 +43,14 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         ingCount = characters.count
         for char in characters {
             ing.append(char)
-            print (char)
+//            print (char)
         }
         
         let characters1 = agfuss.steps.components(separatedBy: ",")
         insCount = characters1.count
         for char in characters1 {
             ins.append(char)
-            print (char)
+//            print (char)
         }
     }
 
@@ -65,10 +65,10 @@ class AgfussDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == ingredient {
-            print ("ING: \(ingCount)")
+//            print ("ING: \(ingCount)")
             return ingCount
         } else if tableView == instruction {
-            print ("INS: \(insCount)")
+//            print ("INS: \(insCount)")
             return insCount
         }
         return 0
