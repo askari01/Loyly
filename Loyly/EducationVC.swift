@@ -128,7 +128,7 @@ class EducationVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 self.json = JSON(response.result.value)
                 self.educations.removeAll()
 //                print (self.json[0]["picture"]) // printed null
-            }
+            
             self.count = self.json["data"].count
             self.tableView.reloadData()
             
@@ -164,6 +164,7 @@ class EducationVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 let education = Education(id: id, level: level, nextDate: nextDate, flanguage: flanguage, wearDate: wearDate, llanguage: llanguage, description: description, topic: topic, picture: url!)
 //                print ("EDUCATION: \(education)")
                 self.educations.append(education)
+            }
             }
         }
         loadingBar.hide()

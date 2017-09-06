@@ -18,6 +18,13 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password1: UITextField!
     @IBOutlet weak var password2: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var phoneNo: UITextField!
+    @IBOutlet weak var wellness: UITextField!
+    @IBOutlet weak var postalCode: UITextField!
+    
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var country: UITextField!
+    @IBOutlet weak var address: UITextField!
     
     var json: JSON!
     let loadingBar = GradientLoadingBar(
@@ -38,9 +45,9 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signUpAction(_ sender: UIButton) {
-        if email.text != "" && name.text != "" && password1.text != "" && password2.text != "" && password1.text == password2.text {
+        if (email.text != "" && name.text != "" && password1.text != "" && password2.text != "" && postalCode.text != "" && wellness.text != "" && city.text != "" && country.text != "" && address.text != "" && password1.text == password2.text) {
             loadingBar.show()
-            var check = signUp(name: name.text!, user: email.text!, pass: password1.text!)
+            var check = signUp(name: name.text!, user: email.text!, pass: password1.text!, postal: postalCode.text!, phone: phoneNo.text!, city: city.text! , country: country.text!, address: address.text!, wellness: wellness.text! )
             if check {
                 performSegue(withIdentifier: "SignIn", sender: self)
             } else {
@@ -89,11 +96,18 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    func signUp(name: String, user: String, pass: String) -> Bool {
+    func signUp(name: String, user: String, pass: String, postal: String , phone: String, city: String, country: String, address: String, wellness: String) -> Bool {
         let parameters: Parameters = [
             "name": name,
             "email": user,
-            "password": pass
+            "password": pass,
+            "city": city,
+            "country": country,
+            "wellness": wellness,
+            "address": address,
+            "phoneno": phoneNo,
+            "lastname": name,
+            "postcode": postalCode
         ]
         
 //        print(parameters)
@@ -101,11 +115,11 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         Alamofire.request("http://swatshawls.com/loyly/Users/signup", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil ).responseJSON{ response in
             switch response.result {
             case .success:
-//                print("0: \(response)")
+                print("0: \(response)")
                 if let value = response.result.value {
                     self.json = JSON(value)
-//                    print("1: \(self.json)")
-//                    print( "2: \(self.json["response"])")
+                    print("1: \(self.json)")
+                    print( "2: \(self.json["response"])")
                     if self.json["response"] == "User Registered Successfully" {
                         self.performSegue(withIdentifier: "SignIn", sender: self)
                     } else {

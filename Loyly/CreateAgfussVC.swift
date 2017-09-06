@@ -272,11 +272,11 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
 //            print("Result: \(response.result)")                         // response serialization result
 //
             if let json = response.result.value {
-//                print("JSON: \(json)") // serialized json response
+                print("JSON: \(json)") // serialized json response
                 self.json = JSON(response.result.value)
                 self.agfusses.removeAll()
-//                print (self.json)
-            }
+                print (self.json)
+            
             self.count = self.json["data"].count
             self.tableView.reloadData()
 
@@ -297,6 +297,7 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
 //                print (id)
                 let agfuss = Agfuss(title: title, tag: tag, time: time, ingredients: ingredient, steps: step, picture: url!)
                 self.agfusses.append(agfuss)
+            }
             }
         }
         loadingBar.hide()
