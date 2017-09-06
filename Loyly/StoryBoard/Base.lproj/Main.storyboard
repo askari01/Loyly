@@ -627,7 +627,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="234" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7et-jf-2bD">
-                                <rect key="frame" x="16" y="158" width="288" height="402"/>
+                                <rect key="frame" x="16" y="114" width="288" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -704,7 +704,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H7p-wo-3bL">
-                                <rect key="frame" x="100" y="82" width="120" height="29"/>
+                                <rect key="frame" x="100" y="38" width="120" height="29"/>
                                 <segments>
                                     <segment title="ALL"/>
                                     <segment title="MY"/>
@@ -715,7 +715,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="5" translatesAutoresizingMaskIntoConstraints="NO" id="WQ8-Pd-Pbx">
-                                <rect key="frame" x="16" y="122" width="288" height="29"/>
+                                <rect key="frame" x="16" y="78" width="288" height="29"/>
                                 <segments>
                                     <segment title="Classic"/>
                                     <segment title="Modern"/>
@@ -778,7 +778,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7T-CB-pjo">
-                                <rect key="frame" x="0.0" y="64" width="320" height="936"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="980"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alpepine" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-C7-Ba0">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
@@ -964,7 +964,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW8-Bf-W2x">
-                                <rect key="frame" x="0.0" y="72" width="340" height="1027"/>
+                                <rect key="frame" x="0.0" y="28" width="340" height="1071"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilX-lx-Fm6">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="1100"/>
@@ -2444,7 +2444,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vUd-IT-nag"/>
-        <segue reference="6TX-ed-Wsv"/>
+        <segue reference="ltS-Cd-47o"/>
         <segue reference="GR6-st-dsU"/>
     </inferredMetricsTieBreakers>
 </document>

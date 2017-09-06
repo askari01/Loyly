@@ -196,10 +196,10 @@ class EssentialOilsVC: UIViewController,UITableViewDataSource, UITableViewDelega
             view.endEditing(true)
         } else {
             inSearchMode = true
-            let lower = searchBar.text!.uppercased()
-//            print ("lower: \(lower)")
+            let lower = searchBar.text!.capitalized
+            print ("lower: \(lower)")
             filteredOils = oils.filter({$0.name.range(of: lower) != nil})
-//            print ("filtered List: \(oils[0])")
+            print ("filtered List: \(oils[0])")
             tableView.reloadData()
         }
     }
