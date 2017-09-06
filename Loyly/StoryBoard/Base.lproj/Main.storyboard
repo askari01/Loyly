@@ -1080,54 +1080,32 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMr-kh-fqM">
-                                                                <rect key="frame" x="-12" y="0.0" width="512" height="41"/>
-                                                                <subviews>
-                                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jyt-am-AFQ">
-                                                                        <rect key="frame" x="8" y="6" width="496" height="29"/>
-                                                                        <segments>
-                                                                            <segment title="Classic"/>
-                                                                            <segment title="Modern"/>
-                                                                            <segment title="Steambath"/>
-                                                                            <segment title="Smoke"/>
-                                                                            <segment title="Show"/>
-                                                                        </segments>
-                                                                        <connections>
-                                                                            <action selector="tagChanges:" destination="WYJ-6X-gYE" eventType="valueChanged" id="E3b-ch-BAe"/>
-                                                                        </connections>
-                                                                    </segmentedControl>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="jyt-am-AFQ" firstAttribute="leading" secondItem="vMr-kh-fqM" secondAttribute="leadingMargin" id="19f-zt-aD8"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="jyt-am-AFQ" secondAttribute="bottom" constant="7" id="EKk-dX-bjD"/>
-                                                                    <constraint firstItem="jyt-am-AFQ" firstAttribute="centerX" secondItem="vMr-kh-fqM" secondAttribute="centerX" id="fqv-zh-1Vh"/>
-                                                                    <constraint firstItem="jyt-am-AFQ" firstAttribute="width" secondItem="vMr-kh-fqM" secondAttribute="width" id="u96-0o-GxA"/>
-                                                                    <constraint firstItem="jyt-am-AFQ" firstAttribute="centerY" secondItem="vMr-kh-fqM" secondAttribute="centerY" id="wc1-Sv-wxd"/>
-                                                                </constraints>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="u96-0o-GxA"/>
-                                                                    </mask>
-                                                                </variation>
-                                                            </scrollView>
+                                                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jyt-am-AFQ">
+                                                                <rect key="frame" x="8" y="6" width="296" height="29"/>
+                                                                <segments>
+                                                                    <segment title="Classic"/>
+                                                                    <segment title="Modern"/>
+                                                                    <segment title="Steambath"/>
+                                                                    <segment title="Smoke"/>
+                                                                    <segment title="Show"/>
+                                                                </segments>
+                                                                <connections>
+                                                                    <action selector="tagChanges:" destination="WYJ-6X-gYE" eventType="valueChanged" id="E3b-ch-BAe"/>
+                                                                </connections>
+                                                            </segmentedControl>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.8901960784313725" green="0.75686274509803919" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="tintColor" red="0.89019607840000003" green="0.75686274509999996" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="vMr-kh-fqM" firstAttribute="top" secondItem="ifM-5E-6ye" secondAttribute="top" id="Cxl-Dp-lyY"/>
-                                                            <constraint firstItem="vMr-kh-fqM" firstAttribute="leading" secondItem="juf-6c-Khp" secondAttribute="leading" id="YMl-Br-bGC"/>
+                                                            <constraint firstItem="jyt-am-AFQ" firstAttribute="centerY" secondItem="ifM-5E-6ye" secondAttribute="centerY" id="MTW-UM-NPS"/>
+                                                            <constraint firstItem="jyt-am-AFQ" firstAttribute="leading" secondItem="juf-6c-Khp" secondAttribute="leadingMargin" id="PGh-To-PG9"/>
                                                             <constraint firstItem="ifM-5E-6ye" firstAttribute="leading" secondItem="juf-6c-Khp" secondAttribute="leadingMargin" constant="-8" id="ai9-je-TsB"/>
-                                                            <constraint firstItem="vMr-kh-fqM" firstAttribute="bottom" secondItem="ifM-5E-6ye" secondAttribute="bottom" id="hh7-Bf-Rfh"/>
                                                             <constraint firstItem="ifM-5E-6ye" firstAttribute="top" secondItem="juf-6c-Khp" secondAttribute="top" id="n9S-WA-LAD"/>
                                                             <constraint firstAttribute="height" constant="41" id="qs5-wh-MBf"/>
                                                             <constraint firstAttribute="trailing" secondItem="ifM-5E-6ye" secondAttribute="trailing" id="rg6-Yl-H6F"/>
                                                             <constraint firstAttribute="bottom" secondItem="ifM-5E-6ye" secondAttribute="bottom" id="y8E-xD-NwF"/>
+                                                            <constraint firstItem="jyt-am-AFQ" firstAttribute="centerX" secondItem="ifM-5E-6ye" secondAttribute="centerX" id="yDL-na-crl"/>
                                                         </constraints>
-                                                        <variation key="default">
-                                                            <mask key="subviews">
-                                                                <exclude reference="vMr-kh-fqM"/>
-                                                            </mask>
-                                                        </variation>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPL-Xy-SNZ">
                                                         <rect key="frame" x="0.0" y="182" width="312" height="30"/>
@@ -1371,16 +1349,6 @@
                                                             <constraint firstAttribute="height" constant="41" id="wHZ-Bz-g3F"/>
                                                         </constraints>
                                                     </view>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilJ-4y-chu">
-                                                        <rect key="frame" x="0.0" y="410" width="312" height="30"/>
-                                                        <color key="backgroundColor" red="0.89019607840000003" green="0.75686274509999996" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="BXu-qb-k6L"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZI-AU-yaQ">
                                                         <rect key="frame" x="0.0" y="450" width="312" height="41"/>
                                                         <subviews>
@@ -1506,7 +1474,6 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="ilJ-4y-chu" firstAttribute="centerY" secondItem="Oeg-rA-JSy" secondAttribute="centerY" id="12N-tz-iQc"/>
                                                     <constraint firstItem="EPL-Xy-SNZ" firstAttribute="top" secondItem="juf-6c-Khp" secondAttribute="bottom" constant="10" id="5kI-db-B13"/>
                                                     <constraint firstItem="eXh-Ba-nk8" firstAttribute="top" secondItem="bME-Th-tIz" secondAttribute="bottom" constant="10" id="B0r-lW-Xjn"/>
                                                     <constraint firstItem="Oeg-rA-JSy" firstAttribute="top" secondItem="ztC-73-YW1" secondAttribute="bottom" constant="10" id="B5y-kU-bfP"/>
@@ -1519,7 +1486,6 @@
                                                     <constraint firstItem="juf-6c-Khp" firstAttribute="top" secondItem="eXh-Ba-nk8" secondAttribute="bottom" constant="10" id="rgQ-Xw-ESb"/>
                                                     <constraint firstItem="bME-Th-tIz" firstAttribute="top" secondItem="s25-HW-GqU" secondAttribute="bottom" constant="10" id="u4K-sD-0Oe"/>
                                                     <constraint firstItem="n1F-Ng-YJx" firstAttribute="top" secondItem="gkk-yu-nZU" secondAttribute="bottom" constant="10" id="vtt-lM-OOO"/>
-                                                    <constraint firstItem="rZI-AU-yaQ" firstAttribute="top" secondItem="ilJ-4y-chu" secondAttribute="bottom" constant="10" id="z9K-sS-JlL"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="subviews">
@@ -2524,7 +2490,6 @@
         <image name="srchbtn" width="607" height="283"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gzd-HS-bKb"/>
         <segue reference="vUd-IT-nag"/>
         <segue reference="ltS-Cd-47o"/>
         <segue reference="GR6-st-dsU"/>
