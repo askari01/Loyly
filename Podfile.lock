@@ -1,7 +1,8 @@
 PODS:
   - Alamofire (4.5.0)
-  - GradientLoadingBar (1.1.1)
+  - GradientLoadingBar (1.1.2)
   - Kingfisher (3.11.0)
+  - ScrollableSegmentedControl (1.2.1)
   - SQLite.swift (0.11.3):
     - SQLite.swift/standard (= 0.11.3)
   - SQLite.swift/standard (0.11.3)
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - GradientLoadingBar (~> 1.0)
   - Kingfisher (~> 3.11.0)
+  - ScrollableSegmentedControl (~> 1.2.1)
   - SQLite.swift (from `https://github.com/stephencelis/SQLite.swift.git`, branch `swift-4`)
   - SwiftyJSON
 
@@ -26,11 +28,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  GradientLoadingBar: ee247760b6b24a922584b724749a1d48bcc0d905
+  GradientLoadingBar: 4d93d3cdb78fde674f5fbae2f93ba1607a8548b3
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
+  ScrollableSegmentedControl: fc0a1cd9a12662a6c12dea44172262bdcca21cdc
   SQLite.swift: f5e183af7f267169a3e71cefc7c0a72e687c52a7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: b623a318a3cc54bb321a427aace28ceaa069a1b9
+PODFILE CHECKSUM: 186d1d20b1d28cb6bec7ef545c362cc531d53805
 
 COCOAPODS: 1.2.1

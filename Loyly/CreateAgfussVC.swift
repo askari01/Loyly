@@ -11,10 +11,12 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 import GradientLoadingBar
+import ScrollableSegmentedControl
 
 class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tagView: ScrollableSegmentedControl!
     
     var count = 0
     var agfusses = [Agfuss]()
@@ -43,9 +45,85 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         tableView.separatorColor = UIColor.black
         
+        // segment control
+        // segmented Controls
+        tagView.segmentStyle = .textOnly
+        tagView.insertSegment(withTitle: "All", at: 0)
+        tagView.insertSegment(withTitle: "Classic", at: 1)
+        tagView.insertSegment(withTitle: "Modern", at: 2)
+        tagView.insertSegment(withTitle: "SteamBath", at: 3)
+        tagView.insertSegment(withTitle: "Airways", at: 4)
+        tagView.insertSegment(withTitle: "Purification", at: 5)
+        tagView.insertSegment(withTitle: "Immunesystem", at: 6)
+        tagView.insertSegment(withTitle: "Seasonal", at: 7)
+        tagView.insertSegment(withTitle: "Relax", at: 8)
+        tagView.insertSegment(withTitle: "Balancing", at: 9)
+        tagView.insertSegment(withTitle: "Activating", at: 10)
+        tagView.insertSegment(withTitle: "Meditation", at: 11)
+        tagView.insertSegment(withTitle: "Entertainment", at: 12)
+        tagView.insertSegment(withTitle: "Smoke", at: 13)
+        tagView.insertSegment(withTitle: "Show", at: 14)
+        
+        
+        tagView.underlineSelected = true
+        tagView.selectedSegmentIndex = 0
+        
+        tagView.addTarget(self, action: #selector(FormViewController.segmentSelected(sender:)), for: .valueChanged)
+        
         getData()
     }
-
+    
+    func segmentSelected(sender:ScrollableSegmentedControl) {
+        print("Segment at index \(sender.selectedSegmentIndex)  selected")
+        if sender.selectedSegmentIndex == 0 {
+            tag = "All"
+            getData()
+        } else if sender.selectedSegmentIndex == 1 {
+            tag = "Classic"
+            getData()
+        } else if sender.selectedSegmentIndex == 2 {
+            tag = "Modern"
+            getData()
+        } else if sender.selectedSegmentIndex == 3 {
+            tag = "SteamBath"
+            getData()
+        } else if sender.selectedSegmentIndex == 4 {
+            tag = "Airways"
+            getData()
+        } else if sender.selectedSegmentIndex == 5 {
+            tag = "Purification"
+            getData()
+        } else if sender.selectedSegmentIndex == 6 {
+            tag = "Immunesystem"
+            getData()
+        } else if sender.selectedSegmentIndex == 7 {
+            tag = "Seasonal"
+            getData()
+        } else if sender.selectedSegmentIndex == 8 {
+            tag = "Relax"
+            getData()
+        } else if sender.selectedSegmentIndex == 9 {
+            tag = "Balancing"
+            getData()
+        } else if sender.selectedSegmentIndex == 10 {
+            tag = "Activating"
+            getData()
+        } else if sender.selectedSegmentIndex == 11 {
+            tag = "Meditation"
+            getData()
+        } else if sender.selectedSegmentIndex == 12 {
+            tag = "Entertainment"
+            getData()
+        } else if sender.selectedSegmentIndex == 13 {
+            tag = "Smoke"
+            getData()
+        } else {
+            tag = "Show"
+            getData()
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -167,7 +245,26 @@ class CreateAgfussVC: UIViewController, UITableViewDataSource, UITableViewDelega
             url = "http://swatshawls.com/loyly/Apis/getbytag/Smoke"
         } else if my == 0 && tag == "Show" {
             url = "http://swatshawls.com/loyly/Apis/getbytag/Show"
+        } else if my == 0 && tag == "Entertainment" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Entertainment"
+        } else if my == 0 && tag == "Meditation" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Meditation"
+        } else if my == 0 && tag == "Activating" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Activating"
+        } else if my == 0 && tag == "Balancing" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Balancing"
+        } else if my == 0 && tag == "Relax" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Relax"
+        } else if my == 0 && tag == "Seasonal" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Seasonal"
+        } else if my == 0 && tag == "Immunesystem" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Immunesystem"
+        } else if my == 0 && tag == "Purification" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Purification"
+        } else if my == 0 && tag == "Airways" {
+            url = "http://swatshawls.com/loyly/Apis/getbytag/Airways"
         }
+        
         
         Alamofire.request(url).responseJSON { response in
 //            print("Request: \(String(describing: response.request))")   // original url request

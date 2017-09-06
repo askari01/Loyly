@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import GradientLoadingBar
+import ScrollableSegmentedControl
 
 class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldDelegate, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var stackView: UIStackView!
@@ -37,6 +38,8 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
     
     // Tags
     @IBOutlet weak var tags: UISegmentedControl!
+    @IBOutlet weak var tagView: ScrollableSegmentedControl!
+   // @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
     
     //Time
     @IBOutlet weak var timeField: UITextField!
@@ -114,6 +117,28 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
         instructionCollection[instructionCount]?.delegate = self
         stepCollection[stepCount]?.delegate = self
         
+        // segmented Controls
+        tagView.segmentStyle = .textOnly
+        tagView.insertSegment(withTitle: "Classic", at: 0)
+        tagView.insertSegment(withTitle: "Modern", at: 1)
+        tagView.insertSegment(withTitle: "SteamBath", at: 2)
+        tagView.insertSegment(withTitle: "Airways", at: 3)
+        tagView.insertSegment(withTitle: "Purification", at: 4)
+        tagView.insertSegment(withTitle: "Immunesystem", at: 5)
+        tagView.insertSegment(withTitle: "Seasonal", at: 6)
+        tagView.insertSegment(withTitle: "Relax", at: 7)
+        tagView.insertSegment(withTitle: "Balancing", at: 8)
+        tagView.insertSegment(withTitle: "Activating", at: 9)
+        tagView.insertSegment(withTitle: "Meditation", at: 10)
+        tagView.insertSegment(withTitle: "Entertainment", at: 11)
+        tagView.insertSegment(withTitle: "Smoke", at: 12)
+        tagView.insertSegment(withTitle: "Show", at: 13)
+        
+        tagView.underlineSelected = true
+        tagView.selectedSegmentIndex = 0
+        
+        tagView.addTarget(self, action: #selector(FormViewController.segmentSelected(sender:)), for: .valueChanged)
+        
         //testing
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -153,6 +178,40 @@ class FormViewController: UIViewController, GameBoardUIViewDelegate,UITextFieldD
 //        
 //        titleSection.layer.shadowPath = UIBezierPath(rect: titleSection.bounds).cgPath
 //        titleSection.layer.shouldRasterize = true
+        
+    }
+    
+    func segmentSelected(sender:ScrollableSegmentedControl) {
+        print("Segment at index \(sender.selectedSegmentIndex)  selected")
+        if sender.selectedSegmentIndex == 0 {
+            tag = "Classic"
+        } else if sender.selectedSegmentIndex == 1 {
+            tag = "Modern"
+        } else if sender.selectedSegmentIndex == 2 {
+            tag = "SteamBath"
+        } else if sender.selectedSegmentIndex == 3 {
+            tag = "Airways"
+        } else if sender.selectedSegmentIndex == 4 {
+            tag = "Purification"
+        } else if sender.selectedSegmentIndex == 5 {
+            tag = "Immunesystem"
+        } else if sender.selectedSegmentIndex == 6 {
+            tag = "Seasonal"
+        } else if sender.selectedSegmentIndex == 7 {
+            tag = "Relax"
+        } else if sender.selectedSegmentIndex == 8 {
+            tag = "Balancing"
+        } else if sender.selectedSegmentIndex == 9 {
+            tag = "Activating"
+        } else if sender.selectedSegmentIndex == 10 {
+            tag = "Meditation"
+        } else if sender.selectedSegmentIndex == 11 {
+            tag = "Entertainment"
+        } else if sender.selectedSegmentIndex == 12 {
+            tag = "Smoke"
+        } else {
+            tag = "Show"
+        }
         
     }
     

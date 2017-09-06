@@ -42,28 +42,29 @@ class OilDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        nameOil.text = oil.name.capitalized
+        nameOil.text = "Name: \(oil.name.capitalized)"
         bannerOil.image = UIImage(named: oil.name)
-        familyOil.text = oil.plantFamily
-        originOil.text = oil.origin
-        extractionMethod.text = oil.extractionmethod
-        plantInfo.text = oil.plantInfo
-        generalPropretise.text = oil.generalPropertise
-        propertiseBody.text = oil.propertiseBody
-        propertiseMind.text = oil.propertiseMind
-        propertiseSkin.text = oil.propertiseSkin
-        fragranceGroup.text = oil.fragrance
-        fragrance.text = oil.fragrance
-        aromaticMolecule.text = oil.aromaticMolecules
-        noteOil.text = oil.note
-        strengthOil.text = oil.strength
-        harmonizesWith.text = oil.harmonizesWith
-        chakra.text = oil.chakra
-        colour.text = oil.colour
-        element.text = oil.element
-        didYouKnow.text = oil.didYouKnow
-        contraindictions.text = oil.contra
-        otherlanguages.text = oil.otherLanguages
+        familyOil.text = "Family: \(oil.plantFamily)"
+        originOil.text = "Origin: \(oil.origin)"
+        partOfPlant.text = "Part of Plant: \(oil.partOfPlant)"
+        extractionMethod.text = "Extraction Method: \(oil.extractionmethod)"
+        plantInfo.text = "Info: \(oil.plantInfo)"
+        generalPropretise.text = "General Propertise: \(oil.generalPropertise)"
+        propertiseBody.text = "Propertise Body: \(oil.propertiseBody)"
+        propertiseMind.text = "Propertise Mind: \(oil.propertiseMind)"
+        propertiseSkin.text = "Propertise Skin: \(oil.propertiseSkin)"
+        fragranceGroup.text = "Fragrance Group: \(oil.fragrance)"
+        fragrance.text = "Fragrance: \(oil.fragrance)"
+        aromaticMolecule.text = "Aromatic Molecule: \(oil.aromaticMolecules)"
+        noteOil.text = "Note: \(oil.note)"
+        strengthOil.text = "Strength: \(oil.strength)"
+        harmonizesWith.text = "Harmonizes: \(oil.harmonizesWith)"
+        chakra.text = "Chakra: \(oil.chakra)"
+        colour.text = "Colour: \(oil.colour)"
+        element.text = "Element: \(oil.element)"
+        didYouKnow.text = "Did You Know: \(oil.didYouKnow)"
+        contraindictions.text = "Contraindictions: \(oil.contra)"
+        otherlanguages.text = "Other Languages: \(oil.otherLanguages)"
     }
 
     override func didReceiveMemoryWarning() {

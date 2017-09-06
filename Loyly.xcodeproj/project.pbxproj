@@ -43,6 +43,7 @@
 		36C209A31F14F682004F55F8 /* eo_instruction_a3_en-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */; };
 		36C346021F22635300247457 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C346011F22635300247457 /* GetData.swift */; };
 		36CA89DA1F5032070092C80D /* oilNew.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36CA89D91F5032070092C80D /* oilNew.csv */; };
+		36DE58E21F5FCE9E007B0CC1 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE58E11F5FCE9E007B0CC1 /* ContactVC.swift */; };
 		36EE5C651F0F9297002809BA /* oils.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36EE5C641F0F9297002809BA /* oils.strings */; };
 		36F36FA51F42DB72008E3F9B /* AgfussDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */; };
 		73592FC28059D717634DE2FB /* Pods_Loyly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */; };
@@ -88,6 +89,7 @@
 		36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "eo_instruction_a3_en-min.pdf"; sourceTree = "<group>"; };
 		36C346011F22635300247457 /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		36CA89D91F5032070092C80D /* oilNew.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = oilNew.csv; path = ../../../Downloads/oilNew.csv; sourceTree = "<group>"; };
+		36DE58E11F5FCE9E007B0CC1 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
 		36EE5C641F0F9297002809BA /* oils.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = oils.strings; path = ../oils.strings; sourceTree = "<group>"; };
 		36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgfussDetailVC.swift; sourceTree = "<group>"; };
 		3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loyly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 				3607F4671F4C3E95005E0FEA /* MainViewController.swift */,
 				36AA83C71F4E02E90023D21F /* EducationVC.swift */,
 				36AA83CD1F4E08D70023D21F /* EducationDetailVC.swift */,
+				36DE58E11F5FCE9E007B0CC1 /* ContactVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DE58E21F5FCE9E007B0CC1 /* ContactVC.swift in Sources */,
 				3688A3C11F4441B2002A94D4 /* SetNewPasswordVC.swift in Sources */,
 				36AA83CA1F4E03400023D21F /* EducationCell.swift in Sources */,
 				36BF89CC1F3AE40A009BC64C /* Agfuss.swift in Sources */,

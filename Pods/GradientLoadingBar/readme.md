@@ -1,7 +1,8 @@
 GradientLoadingBar
 ====================
 
-![Swift3.0](https://img.shields.io/badge/Swift-3.0-green.svg?style=flat) ![Version](https://img.shields.io/cocoapods/v/GradientLoadingBar.svg)
+![Swift3.0](https://img.shields.io/badge/Swift-3.0-green.svg?style=flat) ![Version](https://img.shields.io/cocoapods/v/GradientLoadingBar.svg) ![Master branch build status](https://travis-ci.org/fxm90/GradientLoadingBar.svg?branch=master)
+
 
 An animated gradient loading bar.
 Inspired by [iOS Style Gradient Progress Bar with Pure CSS/CSS3](http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/).
@@ -58,7 +59,7 @@ After that you can use `GradientLoadingBar.sharedInstance()` as mentioned above.
 Check out [my GitHub Gist](https://gist.github.com/fxm90/698554e8335f34e0c6ab95194a4678fb) on how to easily use GradientLoadingBar with [PromiseKit](http://promisekit.org/).
 
 ### Version
-1.1.1
+1.1.2
 
 ### Author
 Felix Mau (contact(@)felix.hamburg)
