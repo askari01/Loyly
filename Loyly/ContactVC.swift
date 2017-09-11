@@ -29,7 +29,7 @@ class ContactVC: UIViewController {
     }
     
     @IBAction func callAction(_ sender: UIButton) {
-        if let url = URL(string: "tel://\(+32471676573)"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "tel://\(0032471676573 as Int64)"), UIApplication.shared.canOpenURL(url) {
             if #available(iOS 10, *) {
                 UIApplication.shared.open(url)
             } else {
