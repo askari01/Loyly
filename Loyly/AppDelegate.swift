@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Sentry
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Sentry
+        do {
+            Client.shared = try Client(dsn: "https://a52c647f400e4ae28b2ab53a77bac04a:5e7685c2b6d540b79787969e525d2554@sentry.io/233056")
+            try Client.shared?.startCrashHandler()
+        } catch let error {
+            print("\(error)")
+            // Wrong DSN or KSCrash not installed
+        }
+        
         if let id = pref.value(forKey: "id") {
             if String(describing: id) != "" {
                 self.window = UIWindow(frame: UIScreen.main.bounds)

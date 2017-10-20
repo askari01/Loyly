@@ -42,8 +42,8 @@
 		36C209A11F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 36C209A01F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf */; };
 		36C209A31F14F682004F55F8 /* eo_instruction_a3_en-min.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */; };
 		36C346021F22635300247457 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C346011F22635300247457 /* GetData.swift */; };
-		36CA89DA1F5032070092C80D /* oilNew.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36CA89D91F5032070092C80D /* oilNew.csv */; };
 		36DE58E21F5FCE9E007B0CC1 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE58E11F5FCE9E007B0CC1 /* ContactVC.swift */; };
+		36ED750C1F99FC7A0047516A /* oilNew2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36ED750B1F99FC790047516A /* oilNew2.csv */; };
 		36EE5C651F0F9297002809BA /* oils.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36EE5C641F0F9297002809BA /* oils.strings */; };
 		36F36FA51F42DB72008E3F9B /* AgfussDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */; };
 		73592FC28059D717634DE2FB /* Pods_Loyly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */; };
@@ -88,8 +88,8 @@
 		36C209A01F14F1ED004F55F8 /* harmonized_blending_a3_en-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "harmonized_blending_a3_en-min.pdf"; sourceTree = "<group>"; };
 		36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "eo_instruction_a3_en-min.pdf"; sourceTree = "<group>"; };
 		36C346011F22635300247457 /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
-		36CA89D91F5032070092C80D /* oilNew.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = oilNew.csv; path = ../../../Downloads/oilNew.csv; sourceTree = "<group>"; };
 		36DE58E11F5FCE9E007B0CC1 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
+		36ED750B1F99FC790047516A /* oilNew2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oilNew2.csv; sourceTree = "<group>"; };
 		36EE5C641F0F9297002809BA /* oils.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = oils.strings; path = ../oils.strings; sourceTree = "<group>"; };
 		36F36FA41F42DB72008E3F9B /* AgfussDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgfussDetailVC.swift; sourceTree = "<group>"; };
 		3A2C51A2A83B014B7EA2B918 /* Pods_Loyly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loyly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,7 +168,7 @@
 				36C209A21F14F682004F55F8 /* eo_instruction_a3_en-min.pdf */,
 				360FDAB81F161CCE00E7FF9B /* caution_a3-min.pdf */,
 				366F7A061F12115C00117B32 /* oils.csv */,
-				36CA89D91F5032070092C80D /* oilNew.csv */,
+				36ED750B1F99FC790047516A /* oilNew2.csv */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -275,6 +275,7 @@
 				36B12CF31F0E385B00B2FEB4 /* Resources */,
 				1DF40A7DA82DCD6802E00807 /* [CP] Embed Pods Frameworks */,
 				05A09546D86747DDE81C26F6 /* [CP] Copy Pods Resources */,
+				36ED750A1F99F9A10047516A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -329,7 +330,7 @@
 				36B12D031F0E385B00B2FEB4 /* LaunchScreen.storyboard in Resources */,
 				360FDAB91F161CCE00E7FF9B /* caution_a3-min.pdf in Resources */,
 				36B12D001F0E385B00B2FEB4 /* Assets.xcassets in Resources */,
-				36CA89DA1F5032070092C80D /* oilNew.csv in Resources */,
+				36ED750C1F99FC7A0047516A /* oilNew2.csv in Resources */,
 				366F7A071F12115C00117B32 /* oils.csv in Resources */,
 				3601D9CC1F2C758900E53372 /* CellV.xib in Resources */,
 				36B12CFE1F0E385B00B2FEB4 /* Main.storyboard in Resources */,
@@ -363,13 +364,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Loyly-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1DF40A7DA82DCD6802E00807 /* [CP] Embed Pods Frameworks */ = {
@@ -378,14 +382,44 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Loyly/Pods-Loyly-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GradientLoadingBar/GradientLoadingBar.framework",
+				"${BUILT_PRODUCTS_DIR}/KSCrash/KSCrash.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GradientLoadingBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSCrash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Loyly/Pods-Loyly-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		36ED750A1F99F9A10047516A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=askari\nexport SENTRY_PROJECT=loyly\nexport SENTRY_AUTH_TOKEN=afed0e97e9e7421781a8f9578afe60433259c2a33f0b4ec5a6bf2b64832ad728\nERROR=$(sentry-cli upload-dsym 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
